@@ -1,0 +1,3455 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="slt" IRI="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2026-08-29</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <Literal xml:lang="en">MSc in Artificial Intelligence, University of Moratuwa</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+        <Literal xml:lang="en">An OWL 2 DL ontology describing tourist attractions in Sri Lanka, the
+administrative locations that contain them, the activities they offer, the festivals they host and
+the accommodation that serves them. Built for the Semantic Web and Ontologies coursework
+assignment: it is designed so that a description-logic reasoner derives location, classification and
+relationship facts that are never asserted directly.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+        <Literal xml:lang="en">Sri Lanka Tourism and Cultural Heritage Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en">Namespace prefix slt:. All local names use UpperCamelCase for classes and individuals, lowerCamelCase for properties.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>1.0</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#AccessibilityLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Accommodation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Activity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdventureActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArchaeologicalSite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Attraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Beach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BuddhistTemple"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BudgetAttraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CentralProvinceAttraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Church"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#City"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CoastalAttraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CoastalCity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ColonialFort"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CulturalActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CulturalAttraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DifficultAccess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#District"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DomesticVisitor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EasyAccess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EcoLodge"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Festival"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ForeignVisitor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Guesthouse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HeritageStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HinduKovil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HistoricLandmark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ModerateAccess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mosque"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mountain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MultiActivityDestination"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NationalPark"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NaturalAttraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PilgrimageDestination"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Province"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReligiousSite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UNESCOWorldHeritageSite"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Visitor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Waterfall"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WildlifeActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WildlifeDestination"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#cityInDistrict"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#districtInProvince"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAccessibility"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAttraction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCapitalCity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNearbyAccommodation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hostsFestival"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#locatedInCity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#locatedInProvince"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#nearbyAttraction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#offersActivity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#servesAttraction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#visited"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#withinArea"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#elevationMetres"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#entranceFeeLKR"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStarRating"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#inscribedYear"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#openOnPoyaDays"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#hasProvenance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HannaSchmidt"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:title"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DifficultAccess"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JaffnaDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EllaMountainEcoLodge"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EasyAccess"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BadullaDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SafariActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HambantotaDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WesternProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MirissaBeach"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HikingActivity"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TissaSafariHotel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WhaleWatchingActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ColomboDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MataraDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EsalaPerahera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NuwaraEliyaDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NallurFestival"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dambulla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KandyLakeHotel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tissamaharama"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BirdwatchingActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JaffnaFort"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TrincomaleeDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jaffna"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KandyDistrict"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HeritageWalkActivity"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AnuradhapuraDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ella"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mirissa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CyclingActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ThavaruniSelvam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SriPadaSeason"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HortonPlains"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Anuradhapura"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NineArchBridge"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CentralProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NorthernProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RavanaFalls"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Colombo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Polonnaruwa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JaffnaHeritageGuesthouse"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NorthCentralProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Badulla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UvaProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SurfingActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Galle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PolonnaruwaDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EasternProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AdamsPeak"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hatton"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Trincomalee"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmarasiriPerera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NationalHeritage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SouthernProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TempleVisitActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kandy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MataleDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ModerateAccess"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NuwaraEliya"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalleFort"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UNESCOWorldHeritage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalleDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sigiriya"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#BudgetAttraction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Attraction"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#entranceFeeLKR"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:decimal"/>
+                    <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxExclusive">
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2500</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#CentralProvinceAttraction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Attraction"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#locatedInProvince"/>
+                <NamedIndividual IRI="#CentralProvince"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#CoastalAttraction"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Attraction"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#locatedInCity"/>
+                <Class IRI="#CoastalCity"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MultiActivityDestination"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Attraction"/>
+            <ObjectMinCardinality cardinality="3">
+                <ObjectProperty IRI="#offersActivity"/>
+                <Class IRI="#Activity"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PilgrimageDestination"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Attraction"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hostsFestival"/>
+                <Class IRI="#Festival"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UNESCOWorldHeritageSite"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Attraction"/>
+            <ObjectHasValue>
+                <ObjectProperty IRI="#hasHeritageStatus"/>
+                <NamedIndividual IRI="#UNESCOWorldHeritage"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#WildlifeDestination"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Attraction"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#offersActivity"/>
+                <Class IRI="#WildlifeActivity"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#AccessibilityLevel"/>
+        <ObjectUnionOf>
+            <Class IRI="#DifficultAccess"/>
+            <Class IRI="#EasyAccess"/>
+            <Class IRI="#ModerateAccess"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdventureActivity"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArchaeologicalSite"/>
+        <Class IRI="#CulturalAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Attraction"/>
+        <ObjectUnionOf>
+            <Class IRI="#CulturalAttraction"/>
+            <Class IRI="#NaturalAttraction"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Beach"/>
+        <Class IRI="#NaturalAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BuddhistTemple"/>
+        <Class IRI="#ReligiousSite"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Church"/>
+        <Class IRI="#ReligiousSite"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#City"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CoastalCity"/>
+        <Class IRI="#City"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ColonialFort"/>
+        <Class IRI="#CulturalAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CulturalActivity"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CulturalAttraction"/>
+        <Class IRI="#Attraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DifficultAccess"/>
+        <Class IRI="#AccessibilityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#District"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DomesticVisitor"/>
+        <Class IRI="#Visitor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EasyAccess"/>
+        <Class IRI="#AccessibilityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EcoLodge"/>
+        <Class IRI="#Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ForeignVisitor"/>
+        <Class IRI="#Visitor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Guesthouse"/>
+        <Class IRI="#Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HinduKovil"/>
+        <Class IRI="#ReligiousSite"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HistoricLandmark"/>
+        <Class IRI="#CulturalAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <Class IRI="#Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ModerateAccess"/>
+        <Class IRI="#AccessibilityLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mosque"/>
+        <Class IRI="#ReligiousSite"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mountain"/>
+        <Class IRI="#NaturalAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NationalPark"/>
+        <Class IRI="#NaturalAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NaturalAttraction"/>
+        <Class IRI="#Attraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Province"/>
+        <Class IRI="#Location"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReligiousSite"/>
+        <Class IRI="#CulturalAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Waterfall"/>
+        <Class IRI="#NaturalAttraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WildlifeActivity"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AdventureActivity"/>
+        <Class IRI="#CulturalActivity"/>
+        <Class IRI="#WildlifeActivity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ArchaeologicalSite"/>
+        <Class IRI="#ColonialFort"/>
+        <Class IRI="#HistoricLandmark"/>
+        <Class IRI="#ReligiousSite"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Beach"/>
+        <Class IRI="#Mountain"/>
+        <Class IRI="#NationalPark"/>
+        <Class IRI="#Waterfall"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BuddhistTemple"/>
+        <Class IRI="#Church"/>
+        <Class IRI="#HinduKovil"/>
+        <Class IRI="#Mosque"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#City"/>
+        <Class IRI="#District"/>
+        <Class IRI="#Province"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#CulturalAttraction"/>
+        <Class IRI="#NaturalAttraction"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DifficultAccess"/>
+        <Class IRI="#EasyAccess"/>
+        <Class IRI="#ModerateAccess"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DomesticVisitor"/>
+        <Class IRI="#ForeignVisitor"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#EcoLodge"/>
+        <Class IRI="#Guesthouse"/>
+        <Class IRI="#Hotel"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Mountain"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DomesticVisitor"/>
+        <NamedIndividual IRI="#AmarasiriPerera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Anuradhapura"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#District"/>
+        <NamedIndividual IRI="#AnuradhapuraDistrict"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ArchaeologicalSite"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Badulla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#District"/>
+        <NamedIndividual IRI="#BadullaDistrict"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WildlifeActivity"/>
+        <NamedIndividual IRI="#BirdwatchingActivity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Province"/>
+        <NamedIndividual IRI="#CentralProvince"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CoastalCity"/>
+        <NamedIndividual IRI="#Colombo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#District"/>
+        <NamedIndividual IRI="#ColomboDistrict"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AdventureActivity"/>
+        <NamedIndividual IRI="#CyclingActivity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Dambulla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#BuddhistTemple"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Province"/>
+        <NamedIndividual IRI="#EasternProvince"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Ella"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EcoLodge"/>
+        <NamedIndividual IRI="#EllaMountainEcoLodge"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Festival"/>
+        <NamedIndividual IRI="#EsalaPerahera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CoastalCity"/>
+        <NamedIndividual IRI="#Galle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#District"/>
+        <NamedIndividual IRI="#GalleDistrict"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ColonialFort"/>
+        <NamedIndividual IRI="#GalleFort"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#District"/>
+        <NamedIndividual IRI="#HambantotaDistrict"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ForeignVisitor"/>
+        <NamedIndividual IRI="#HannaSchmidt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Hatton"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CulturalActivity"/>
+        <NamedIndividual IRI="#HeritageWalkActivity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AdventureActivity"/>
+        <NamedIndividual IRI="#HikingActivity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NationalPark"/>
+        <NamedIndividual IRI="#HortonPlains"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CoastalCity"/>
+        <NamedIndividual IRI="#Jaffna"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#District"/>
+        <NamedIndividual IRI="#JaffnaDistrict"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ColonialFort"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Guesthouse"/>
+        <NamedIndividual IRI="#JaffnaHeritageGuesthouse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Kandy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#District"/>
+        <NamedIndividual IRI="#KandyDistrict"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hotel"/>
+        <NamedIndividual IRI="#KandyLakeHotel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HinduKovil"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#District"/>
+        <NamedIndividual IRI="#MataleDistrict"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#District"/>
+        <NamedIndividual IRI="#MataraDistrict"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CoastalCity"/>
+        <NamedIndividual IRI="#Mirissa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Beach"/>
+        <NamedIndividual IRI="#MirissaBeach"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Festival"/>
+        <NamedIndividual IRI="#NallurFestival"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HinduKovil"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HeritageStatus"/>
+        <NamedIndividual IRI="#NationalHeritage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HistoricLandmark"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Province"/>
+        <NamedIndividual IRI="#NorthCentralProvince"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Province"/>
+        <NamedIndividual IRI="#NorthernProvince"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#NuwaraEliya"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#District"/>
+        <NamedIndividual IRI="#NuwaraEliyaDistrict"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CulturalActivity"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Polonnaruwa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ArchaeologicalSite"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#District"/>
+        <NamedIndividual IRI="#PolonnaruwaDistrict"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Waterfall"/>
+        <NamedIndividual IRI="#RavanaFalls"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WildlifeActivity"/>
+        <NamedIndividual IRI="#SafariActivity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Sigiriya"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ArchaeologicalSite"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Province"/>
+        <NamedIndividual IRI="#SouthernProvince"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Festival"/>
+        <NamedIndividual IRI="#SriPadaSeason"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AdventureActivity"/>
+        <NamedIndividual IRI="#SurfingActivity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#BuddhistTemple"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CulturalActivity"/>
+        <NamedIndividual IRI="#TempleVisitActivity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DomesticVisitor"/>
+        <NamedIndividual IRI="#ThavaruniSelvam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hotel"/>
+        <NamedIndividual IRI="#TissaSafariHotel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Tissamaharama"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CoastalCity"/>
+        <NamedIndividual IRI="#Trincomalee"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#District"/>
+        <NamedIndividual IRI="#TrincomaleeDistrict"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HeritageStatus"/>
+        <NamedIndividual IRI="#UNESCOWorldHeritage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Province"/>
+        <NamedIndividual IRI="#UvaProvince"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Province"/>
+        <NamedIndividual IRI="#WesternProvince"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WildlifeActivity"/>
+        <NamedIndividual IRI="#WhaleWatchingActivity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NationalPark"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+        <NamedIndividual IRI="#GalleFort"/>
+        <NamedIndividual IRI="#HortonPlains"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+        <NamedIndividual IRI="#MirissaBeach"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+        <NamedIndividual IRI="#RavanaFalls"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#BirdwatchingActivity"/>
+        <NamedIndividual IRI="#CyclingActivity"/>
+        <NamedIndividual IRI="#HeritageWalkActivity"/>
+        <NamedIndividual IRI="#HikingActivity"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+        <NamedIndividual IRI="#SafariActivity"/>
+        <NamedIndividual IRI="#SurfingActivity"/>
+        <NamedIndividual IRI="#TempleVisitActivity"/>
+        <NamedIndividual IRI="#WhaleWatchingActivity"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#CentralProvince"/>
+        <NamedIndividual IRI="#EasternProvince"/>
+        <NamedIndividual IRI="#NorthCentralProvince"/>
+        <NamedIndividual IRI="#NorthernProvince"/>
+        <NamedIndividual IRI="#SouthernProvince"/>
+        <NamedIndividual IRI="#UvaProvince"/>
+        <NamedIndividual IRI="#WesternProvince"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#EsalaPerahera"/>
+        <NamedIndividual IRI="#NallurFestival"/>
+        <NamedIndividual IRI="#SriPadaSeason"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#NationalHeritage"/>
+        <NamedIndividual IRI="#UNESCOWorldHeritage"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <NamedIndividual IRI="#DifficultAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <NamedIndividual IRI="#NationalHeritage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hostsFestival"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <NamedIndividual IRI="#SriPadaSeason"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <NamedIndividual IRI="#Hatton"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <NamedIndividual IRI="#HikingActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <NamedIndividual IRI="#TempleVisitActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#visited"/>
+        <NamedIndividual IRI="#AmarasiriPerera"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#visited"/>
+        <NamedIndividual IRI="#AmarasiriPerera"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#visited"/>
+        <NamedIndividual IRI="#AmarasiriPerera"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Anuradhapura"/>
+        <NamedIndividual IRI="#AnuradhapuraDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <NamedIndividual IRI="#AnuradhapuraDistrict"/>
+        <NamedIndividual IRI="#NorthCentralProvince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+        <NamedIndividual IRI="#EasyAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+        <NamedIndividual IRI="#UNESCOWorldHeritage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+        <NamedIndividual IRI="#Anuradhapura"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+        <NamedIndividual IRI="#CyclingActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+        <NamedIndividual IRI="#HeritageWalkActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+        <NamedIndividual IRI="#TempleVisitActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Badulla"/>
+        <NamedIndividual IRI="#BadullaDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <NamedIndividual IRI="#BadullaDistrict"/>
+        <NamedIndividual IRI="#UvaProvince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapitalCity"/>
+        <NamedIndividual IRI="#CentralProvince"/>
+        <NamedIndividual IRI="#Kandy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Colombo"/>
+        <NamedIndividual IRI="#ColomboDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <NamedIndividual IRI="#ColomboDistrict"/>
+        <NamedIndividual IRI="#WesternProvince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Dambulla"/>
+        <NamedIndividual IRI="#MataleDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+        <NamedIndividual IRI="#ModerateAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+        <NamedIndividual IRI="#UNESCOWorldHeritage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+        <NamedIndividual IRI="#Dambulla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+        <NamedIndividual IRI="#HeritageWalkActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+        <NamedIndividual IRI="#TempleVisitActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapitalCity"/>
+        <NamedIndividual IRI="#EasternProvince"/>
+        <NamedIndividual IRI="#Trincomalee"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Ella"/>
+        <NamedIndividual IRI="#BadullaDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#servesAttraction"/>
+        <NamedIndividual IRI="#EllaMountainEcoLodge"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#servesAttraction"/>
+        <NamedIndividual IRI="#EllaMountainEcoLodge"/>
+        <NamedIndividual IRI="#RavanaFalls"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Galle"/>
+        <NamedIndividual IRI="#GalleDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <NamedIndividual IRI="#GalleDistrict"/>
+        <NamedIndividual IRI="#SouthernProvince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#GalleFort"/>
+        <NamedIndividual IRI="#EasyAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <NamedIndividual IRI="#GalleFort"/>
+        <NamedIndividual IRI="#UNESCOWorldHeritage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#GalleFort"/>
+        <NamedIndividual IRI="#Galle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#GalleFort"/>
+        <NamedIndividual IRI="#CyclingActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#GalleFort"/>
+        <NamedIndividual IRI="#HeritageWalkActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#GalleFort"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <NamedIndividual IRI="#HambantotaDistrict"/>
+        <NamedIndividual IRI="#SouthernProvince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#visited"/>
+        <NamedIndividual IRI="#HannaSchmidt"/>
+        <NamedIndividual IRI="#GalleFort"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#visited"/>
+        <NamedIndividual IRI="#HannaSchmidt"/>
+        <NamedIndividual IRI="#MirissaBeach"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#visited"/>
+        <NamedIndividual IRI="#HannaSchmidt"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#visited"/>
+        <NamedIndividual IRI="#HannaSchmidt"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Hatton"/>
+        <NamedIndividual IRI="#NuwaraEliyaDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#HortonPlains"/>
+        <NamedIndividual IRI="#ModerateAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#HortonPlains"/>
+        <NamedIndividual IRI="#NuwaraEliya"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#HortonPlains"/>
+        <NamedIndividual IRI="#BirdwatchingActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#HortonPlains"/>
+        <NamedIndividual IRI="#HikingActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#HortonPlains"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Jaffna"/>
+        <NamedIndividual IRI="#JaffnaDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <NamedIndividual IRI="#JaffnaDistrict"/>
+        <NamedIndividual IRI="#NorthernProvince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+        <NamedIndividual IRI="#EasyAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+        <NamedIndividual IRI="#NationalHeritage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+        <NamedIndividual IRI="#Jaffna"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+        <NamedIndividual IRI="#CyclingActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+        <NamedIndividual IRI="#HeritageWalkActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#servesAttraction"/>
+        <NamedIndividual IRI="#JaffnaHeritageGuesthouse"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#servesAttraction"/>
+        <NamedIndividual IRI="#JaffnaHeritageGuesthouse"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Kandy"/>
+        <NamedIndividual IRI="#KandyDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <NamedIndividual IRI="#KandyDistrict"/>
+        <NamedIndividual IRI="#CentralProvince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#servesAttraction"/>
+        <NamedIndividual IRI="#KandyLakeHotel"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+        <NamedIndividual IRI="#EasyAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+        <NamedIndividual IRI="#NationalHeritage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+        <NamedIndividual IRI="#Trincomalee"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+        <NamedIndividual IRI="#TempleVisitActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <NamedIndividual IRI="#MataleDistrict"/>
+        <NamedIndividual IRI="#CentralProvince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <NamedIndividual IRI="#MataraDistrict"/>
+        <NamedIndividual IRI="#SouthernProvince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Mirissa"/>
+        <NamedIndividual IRI="#MataraDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#MirissaBeach"/>
+        <NamedIndividual IRI="#EasyAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#MirissaBeach"/>
+        <NamedIndividual IRI="#Mirissa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#MirissaBeach"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#MirissaBeach"/>
+        <NamedIndividual IRI="#SurfingActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#MirissaBeach"/>
+        <NamedIndividual IRI="#WhaleWatchingActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+        <NamedIndividual IRI="#EasyAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+        <NamedIndividual IRI="#NationalHeritage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hostsFestival"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+        <NamedIndividual IRI="#NallurFestival"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+        <NamedIndividual IRI="#Jaffna"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nearbyAttraction"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+        <NamedIndividual IRI="#TempleVisitActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+        <NamedIndividual IRI="#ModerateAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+        <NamedIndividual IRI="#NationalHeritage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+        <NamedIndividual IRI="#Ella"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nearbyAttraction"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+        <NamedIndividual IRI="#RavanaFalls"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+        <NamedIndividual IRI="#HikingActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapitalCity"/>
+        <NamedIndividual IRI="#NorthCentralProvince"/>
+        <NamedIndividual IRI="#Anuradhapura"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapitalCity"/>
+        <NamedIndividual IRI="#NorthernProvince"/>
+        <NamedIndividual IRI="#Jaffna"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#NuwaraEliya"/>
+        <NamedIndividual IRI="#NuwaraEliyaDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <NamedIndividual IRI="#NuwaraEliyaDistrict"/>
+        <NamedIndividual IRI="#CentralProvince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Polonnaruwa"/>
+        <NamedIndividual IRI="#PolonnaruwaDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+        <NamedIndividual IRI="#EasyAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+        <NamedIndividual IRI="#UNESCOWorldHeritage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+        <NamedIndividual IRI="#Polonnaruwa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+        <NamedIndividual IRI="#CyclingActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+        <NamedIndividual IRI="#HeritageWalkActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <NamedIndividual IRI="#PolonnaruwaDistrict"/>
+        <NamedIndividual IRI="#NorthCentralProvince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#RavanaFalls"/>
+        <NamedIndividual IRI="#EasyAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#RavanaFalls"/>
+        <NamedIndividual IRI="#Ella"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#RavanaFalls"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Sigiriya"/>
+        <NamedIndividual IRI="#MataleDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <NamedIndividual IRI="#ModerateAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <NamedIndividual IRI="#UNESCOWorldHeritage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <NamedIndividual IRI="#Sigiriya"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#nearbyAttraction"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <NamedIndividual IRI="#HeritageWalkActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <NamedIndividual IRI="#HikingActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapitalCity"/>
+        <NamedIndividual IRI="#SouthernProvince"/>
+        <NamedIndividual IRI="#Galle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <NamedIndividual IRI="#EasyAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <NamedIndividual IRI="#UNESCOWorldHeritage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hostsFestival"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <NamedIndividual IRI="#EsalaPerahera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <NamedIndividual IRI="#Kandy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <NamedIndividual IRI="#HeritageWalkActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <NamedIndividual IRI="#TempleVisitActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#visited"/>
+        <NamedIndividual IRI="#ThavaruniSelvam"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#visited"/>
+        <NamedIndividual IRI="#ThavaruniSelvam"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#visited"/>
+        <NamedIndividual IRI="#ThavaruniSelvam"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#servesAttraction"/>
+        <NamedIndividual IRI="#TissaSafariHotel"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Tissamaharama"/>
+        <NamedIndividual IRI="#HambantotaDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <NamedIndividual IRI="#Trincomalee"/>
+        <NamedIndividual IRI="#TrincomaleeDistrict"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <NamedIndividual IRI="#TrincomaleeDistrict"/>
+        <NamedIndividual IRI="#EasternProvince"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapitalCity"/>
+        <NamedIndividual IRI="#UvaProvince"/>
+        <NamedIndividual IRI="#Badulla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCapitalCity"/>
+        <NamedIndividual IRI="#WesternProvince"/>
+        <NamedIndividual IRI="#Colombo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+        <NamedIndividual IRI="#ModerateAccess"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+        <NamedIndividual IRI="#Tissamaharama"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+        <NamedIndividual IRI="#BirdwatchingActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offersActivity"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+        <NamedIndividual IRI="#SafariActivity"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">250</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">7</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#elevationMetres"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2243</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">340</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">7500</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#inscribedYear"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1982</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">420</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#elevationMetres"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">340</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#inscribedYear"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1991</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasStarRating"/>
+        <NamedIndividual IRI="#EllaMountainEcoLodge"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#GalleFort"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">900</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#GalleFort"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#GalleFort"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#inscribedYear"/>
+        <NamedIndividual IRI="#GalleFort"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1988</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#GalleFort"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#HortonPlains"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">190</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#HortonPlains"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#elevationMetres"/>
+        <NamedIndividual IRI="#HortonPlains"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2100</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#HortonPlains"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#HortonPlains"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">120</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#JaffnaFort"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasStarRating"/>
+        <NamedIndividual IRI="#JaffnaHeritageGuesthouse"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasStarRating"/>
+        <NamedIndividual IRI="#KandyLakeHotel"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">200</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#elevationMetres"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">130</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#MirissaBeach"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">480</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#MirissaBeach"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#MirissaBeach"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#MirissaBeach"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">300</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">400</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#elevationMetres"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">930</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#NineArchBridge"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">280</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">7500</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#inscribedYear"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1982</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#RavanaFalls"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">350</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#RavanaFalls"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#elevationMetres"/>
+        <NamedIndividual IRI="#RavanaFalls"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">760</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#RavanaFalls"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#RavanaFalls"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">780</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">3.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#elevationMetres"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">349</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">10000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#inscribedYear"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1982</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">650</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#inscribedYear"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1988</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasStarRating"/>
+        <NamedIndividual IRI="#TissaSafariHotel"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">550</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4500</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <ObjectProperty IRI="#withinArea"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <ObjectProperty IRI="#withinArea"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAttraction"/>
+        <ObjectProperty IRI="#locatedInCity"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasNearbyAccommodation"/>
+        <ObjectProperty IRI="#servesAttraction"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#cityInDistrict"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#districtInProvince"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasAccessibility"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCapitalCity"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCapitalCity"/>
+    </InverseFunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#nearbyAttraction"/>
+    </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#locatedInCity"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#withinArea"/>
+    </TransitiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#locatedInCity"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#nearbyAttraction"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <Class IRI="#City"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <Class IRI="#District"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <Class IRI="#Attraction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAttraction"/>
+        <Class IRI="#City"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCapitalCity"/>
+        <Class IRI="#Province"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <Class IRI="#Attraction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNearbyAccommodation"/>
+        <Class IRI="#Attraction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hostsFestival"/>
+        <Class IRI="#Attraction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <Class IRI="#Attraction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locatedInProvince"/>
+        <Class IRI="#Attraction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#nearbyAttraction"/>
+        <Class IRI="#Attraction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#offersActivity"/>
+        <Class IRI="#Attraction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#servesAttraction"/>
+        <Class IRI="#Accommodation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#visited"/>
+        <Class IRI="#Visitor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#withinArea"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#cityInDistrict"/>
+        <Class IRI="#District"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#districtInProvince"/>
+        <Class IRI="#Province"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAccessibility"/>
+        <Class IRI="#AccessibilityLevel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAttraction"/>
+        <Class IRI="#Attraction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCapitalCity"/>
+        <Class IRI="#City"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasHeritageStatus"/>
+        <Class IRI="#HeritageStatus"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNearbyAccommodation"/>
+        <Class IRI="#Accommodation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hostsFestival"/>
+        <Class IRI="#Festival"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#locatedInCity"/>
+        <Class IRI="#City"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#locatedInProvince"/>
+        <Class IRI="#Province"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#nearbyAttraction"/>
+        <Class IRI="#Attraction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#offersActivity"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#servesAttraction"/>
+        <Class IRI="#Attraction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#visited"/>
+        <Class IRI="#Attraction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#withinArea"/>
+        <Class IRI="#Location"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#locatedInCity"/>
+            <ObjectProperty IRI="#cityInDistrict"/>
+            <ObjectProperty IRI="#districtInProvince"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#locatedInProvince"/>
+    </SubObjectPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#entranceFeeLKR"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <Class IRI="#Attraction"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <Class IRI="#Attraction"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#elevationMetres"/>
+        <Class IRI="#Attraction"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <Class IRI="#Attraction"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasStarRating"/>
+        <Class IRI="#Accommodation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#inscribedYear"/>
+        <Class IRI="#Attraction"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <Class IRI="#Attraction"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#annualVisitorsThousands"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#averageVisitDurationHours"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#elevationMetres"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#entranceFeeLKR"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStarRating"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#inscribedYear"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#openOnPoyaDays"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AccessibilityLevel</IRI>
+        <Literal xml:lang="en">How hard the attraction is to reach. Exhaustively partitioned into Easy, Moderate and Difficult.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AccessibilityLevel</IRI>
+        <Literal xml:lang="en">Accessibility level</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Accommodation</IRI>
+        <Literal xml:lang="en">A place where visitors stay overnight.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Accommodation</IRI>
+        <Literal xml:lang="en">Accommodation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Activity</IRI>
+        <Literal xml:lang="en">Something a visitor can do at an attraction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Activity</IRI>
+        <Literal xml:lang="en">Activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AdamsPeak</IRI>
+        <Literal xml:lang="en">Conical summit venerated by four religions, climbed overnight during pilgrimage season.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AdamsPeak</IRI>
+        <Literal xml:lang="en">Adam&apos;s Peak (Sri Pada)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AdventureActivity</IRI>
+        <Literal xml:lang="en">A physically demanding outdoor activity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AdventureActivity</IRI>
+        <Literal xml:lang="en">Adventure activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AmarasiriPerera</IRI>
+        <Literal xml:lang="en">Amarasiri Perera</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Anuradhapura</IRI>
+        <Literal xml:lang="en">Anuradhapura</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AnuradhapuraDistrict</IRI>
+        <Literal xml:lang="en">Anuradhapura District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AnuradhapuraSacredCity</IRI>
+        <Literal xml:lang="en">First capital of Sri Lanka, containing the Sri Maha Bodhi and several great stupas.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AnuradhapuraSacredCity</IRI>
+        <Literal xml:lang="en">Sacred City of Anuradhapura</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ArchaeologicalSite</IRI>
+        <Literal xml:lang="en">An excavated or conserved ancient settlement or monument.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ArchaeologicalSite</IRI>
+        <Literal xml:lang="en">Archaeological site</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Attraction</IRI>
+        <Literal xml:lang="en">Any site in Sri Lanka that a visitor may travel to see. Root of the attraction taxonomy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Attraction</IRI>
+        <Literal xml:lang="en">Attraction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Badulla</IRI>
+        <Literal xml:lang="en">Badulla</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BadullaDistrict</IRI>
+        <Literal xml:lang="en">Badulla District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Beach</IRI>
+        <Literal xml:lang="en">A coastal sand or rock shoreline visited for recreation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Beach</IRI>
+        <Literal xml:lang="en">Beach</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BirdwatchingActivity</IRI>
+        <Literal xml:lang="en">Birdwatching</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BuddhistTemple</IRI>
+        <Literal xml:lang="en">A vihara, dagaba or cave temple of the Buddhist tradition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BuddhistTemple</IRI>
+        <Literal xml:lang="en">Buddhist temple</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BudgetAttraction</IRI>
+        <Literal xml:lang="en">DEFINED: an Attraction whose entrance fee is below LKR 2500. Uses an OWL 2 datatype restriction on a data property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BudgetAttraction</IRI>
+        <Literal xml:lang="en">Budget attraction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CentralProvince</IRI>
+        <Literal xml:lang="en">Central Province</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CentralProvinceAttraction</IRI>
+        <Literal xml:lang="en">DEFINED: an Attraction located in the Central Province. Membership depends entirely on the locatedInProvince property chain.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CentralProvinceAttraction</IRI>
+        <Literal xml:lang="en">Central Province attraction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Church</IRI>
+        <Literal xml:lang="en">A Christian place of worship.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Church</IRI>
+        <Literal xml:lang="en">Church</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#City</IRI>
+        <Literal xml:lang="en">A city or town within a district.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#City</IRI>
+        <Literal xml:lang="en">City</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CoastalAttraction</IRI>
+        <Literal xml:lang="en">DEFINED: an Attraction located in a coastal city.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CoastalAttraction</IRI>
+        <Literal xml:lang="en">Coastal attraction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CoastalCity</IRI>
+        <Literal xml:lang="en">A city that lies on the coastline. Used to derive coastal attractions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CoastalCity</IRI>
+        <Literal xml:lang="en">Coastal city</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Colombo</IRI>
+        <Literal xml:lang="en">Colombo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ColomboDistrict</IRI>
+        <Literal xml:lang="en">Colombo District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ColonialFort</IRI>
+        <Literal xml:lang="en">A Portuguese, Dutch or British military fortification.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ColonialFort</IRI>
+        <Literal xml:lang="en">Colonial fort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CulturalActivity</IRI>
+        <Literal xml:lang="en">An activity centred on heritage, religion or local tradition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CulturalActivity</IRI>
+        <Literal xml:lang="en">Cultural activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CulturalAttraction</IRI>
+        <Literal xml:lang="en">An attraction whose primary value is human-made: religious, archaeological or colonial.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CulturalAttraction</IRI>
+        <Literal xml:lang="en">Cultural attraction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#CyclingActivity</IRI>
+        <Literal xml:lang="en">Cycling</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Dambulla</IRI>
+        <Literal xml:lang="en">Dambulla</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DambullaCaveTemple</IRI>
+        <Literal xml:lang="en">Five cave shrines containing 153 Buddha statues and painted ceilings.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DambullaCaveTemple</IRI>
+        <Literal xml:lang="en">Dambulla Royal Cave Temple</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DifficultAccess</IRI>
+        <Literal xml:lang="en">Requires a long or strenuous ascent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DifficultAccess</IRI>
+        <Literal xml:lang="en">Difficult access</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#District</IRI>
+        <Literal xml:lang="en">An administrative district within a province.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#District</IRI>
+        <Literal xml:lang="en">District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DomesticVisitor</IRI>
+        <Literal xml:lang="en">Domestic visitor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EasternProvince</IRI>
+        <Literal xml:lang="en">Eastern Province</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EasyAccess</IRI>
+        <Literal xml:lang="en">Reachable by road, minimal walking.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EasyAccess</IRI>
+        <Literal xml:lang="en">Easy access</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EcoLodge</IRI>
+        <Literal xml:lang="en">Eco lodge</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Ella</IRI>
+        <Literal xml:lang="en">Ella</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EllaMountainEcoLodge</IRI>
+        <Literal xml:lang="en">Ella Mountain Eco Lodge</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EsalaPerahera</IRI>
+        <Literal xml:lang="en">Annual procession of the Sacred Tooth Relic, held in Kandy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#EsalaPerahera</IRI>
+        <Literal xml:lang="en">Kandy Esala Perahera</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Festival</IRI>
+        <Literal xml:lang="en">A recurring cultural or religious event hosted at an attraction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Festival</IRI>
+        <Literal xml:lang="en">Festival</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ForeignVisitor</IRI>
+        <Literal xml:lang="en">Foreign visitor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Galle</IRI>
+        <Literal xml:lang="en">Galle</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GalleDistrict</IRI>
+        <Literal xml:lang="en">Galle District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GalleFort</IRI>
+        <Literal xml:lang="en">Fortified Dutch colonial town, still inhabited, on the southern coast.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GalleFort</IRI>
+        <Literal xml:lang="en">Galle Fort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Guesthouse</IRI>
+        <Literal xml:lang="en">Guesthouse</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HambantotaDistrict</IRI>
+        <Literal xml:lang="en">Hambantota District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HannaSchmidt</IRI>
+        <Literal xml:lang="en">Hanna Schmidt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Hatton</IRI>
+        <Literal xml:lang="en">Hatton</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HeritageStatus</IRI>
+        <Literal xml:lang="en">A formal heritage designation held by an attraction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HeritageStatus</IRI>
+        <Literal xml:lang="en">Heritage status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HeritageWalkActivity</IRI>
+        <Literal xml:lang="en">Guided heritage walk</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HikingActivity</IRI>
+        <Literal xml:lang="en">Hiking</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HinduKovil</IRI>
+        <Literal xml:lang="en">A Hindu temple, called a kovil in Sri Lankan usage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HinduKovil</IRI>
+        <Literal xml:lang="en">Hindu kovil</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HistoricLandmark</IRI>
+        <Literal xml:lang="en">A notable engineering or civic structure of historic interest, such as a colonial-era bridge.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HistoricLandmark</IRI>
+        <Literal xml:lang="en">Historic landmark</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HortonPlains</IRI>
+        <Literal xml:lang="en">Montane grassland plateau containing World&apos;s End escarpment and Baker&apos;s Falls.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HortonPlains</IRI>
+        <Literal xml:lang="en">Horton Plains National Park</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Hotel</IRI>
+        <Literal xml:lang="en">Hotel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Jaffna</IRI>
+        <Literal xml:lang="en">Jaffna</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#JaffnaDistrict</IRI>
+        <Literal xml:lang="en">Jaffna District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#JaffnaFort</IRI>
+        <Literal xml:lang="en">Pentagonal Portuguese fort rebuilt by the Dutch, on the Jaffna lagoon.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#JaffnaFort</IRI>
+        <Literal xml:lang="en">Jaffna Fort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#JaffnaHeritageGuesthouse</IRI>
+        <Literal xml:lang="en">Jaffna Heritage Guesthouse</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Kandy</IRI>
+        <Literal xml:lang="en">Kandy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#KandyDistrict</IRI>
+        <Literal xml:lang="en">Kandy District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#KandyLakeHotel</IRI>
+        <Literal xml:lang="en">Kandy Lake Hotel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#KoneswaramTemple</IRI>
+        <Literal xml:lang="en">Cliff-top Hindu temple on Swami Rock above Trincomalee harbour.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#KoneswaramTemple</IRI>
+        <Literal xml:lang="en">Koneswaram Temple</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Location</IRI>
+        <Literal xml:lang="en">An administrative or geographic place. Provinces contain districts, districts contain cities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Location</IRI>
+        <Literal xml:lang="en">Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MataleDistrict</IRI>
+        <Literal xml:lang="en">Matale District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MataraDistrict</IRI>
+        <Literal xml:lang="en">Matara District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Mirissa</IRI>
+        <Literal xml:lang="en">Mirissa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MirissaBeach</IRI>
+        <Literal xml:lang="en">Crescent bay on the south coast, the main departure point for blue whale watching.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MirissaBeach</IRI>
+        <Literal xml:lang="en">Mirissa Beach</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ModerateAccess</IRI>
+        <Literal xml:lang="en">Requires a short climb, rough track or jeep transfer.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ModerateAccess</IRI>
+        <Literal xml:lang="en">Moderate access</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mosque</IRI>
+        <Literal xml:lang="en">An Islamic place of worship.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Mosque</IRI>
+        <Literal xml:lang="en">Mosque</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mountain</IRI>
+        <Literal xml:lang="en">A peak or highland summit reached on foot.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Mountain</IRI>
+        <Literal xml:lang="en">Mountain</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MultiActivityDestination</IRI>
+        <Literal xml:lang="en">DEFINED: an Attraction offering three or more distinct activities. Uses a qualified minimum cardinality restriction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MultiActivityDestination</IRI>
+        <Literal xml:lang="en">Multi-activity destination</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NallurFestival</IRI>
+        <Literal xml:lang="en">Twenty-five day Hindu festival held in Jaffna.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NallurFestival</IRI>
+        <Literal xml:lang="en">Nallur Festival</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NallurKandaswamyKovil</IRI>
+        <Literal xml:lang="en">Principal Hindu temple of Jaffna, dedicated to Lord Murugan.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NallurKandaswamyKovil</IRI>
+        <Literal xml:lang="en">Nallur Kandaswamy Kovil</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NationalHeritage</IRI>
+        <Literal xml:lang="en">Protected monument under the Sri Lankan Antiquities Ordinance.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NationalHeritage</IRI>
+        <Literal xml:lang="en">National Heritage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NationalPark</IRI>
+        <Literal xml:lang="en">A protected wildlife reserve managed by the Department of Wildlife Conservation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NationalPark</IRI>
+        <Literal xml:lang="en">National park</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NaturalAttraction</IRI>
+        <Literal xml:lang="en">An attraction whose primary value is a landscape, ecosystem or geological feature.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NaturalAttraction</IRI>
+        <Literal xml:lang="en">Natural attraction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NineArchBridge</IRI>
+        <Literal xml:lang="en">Colonial-era stone viaduct on the Badulla railway line, built without steel.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NineArchBridge</IRI>
+        <Literal xml:lang="en">Nine Arch Bridge</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NorthCentralProvince</IRI>
+        <Literal xml:lang="en">North Central Province</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NorthernProvince</IRI>
+        <Literal xml:lang="en">Northern Province</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NuwaraEliya</IRI>
+        <Literal xml:lang="en">Nuwara Eliya</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NuwaraEliyaDistrict</IRI>
+        <Literal xml:lang="en">Nuwara Eliya District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PhotographyActivity</IRI>
+        <Literal xml:lang="en">Photography</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PilgrimageDestination</IRI>
+        <Literal xml:lang="en">DEFINED: an Attraction that hosts at least one festival.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PilgrimageDestination</IRI>
+        <Literal xml:lang="en">Pilgrimage destination</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Polonnaruwa</IRI>
+        <Literal xml:lang="en">Polonnaruwa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PolonnaruwaAncientCity</IRI>
+        <Literal xml:lang="en">Second capital, containing the Gal Vihara rock sculptures and the Parakrama Samudra.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PolonnaruwaAncientCity</IRI>
+        <Literal xml:lang="en">Ancient City of Polonnaruwa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PolonnaruwaDistrict</IRI>
+        <Literal xml:lang="en">Polonnaruwa District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Province</IRI>
+        <Literal xml:lang="en">One of the nine provinces of Sri Lanka.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Province</IRI>
+        <Literal xml:lang="en">Province</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RavanaFalls</IRI>
+        <Literal xml:lang="en">Twenty-five metre cascade on the Ella–Wellawaya road, associated with the Ramayana.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#RavanaFalls</IRI>
+        <Literal xml:lang="en">Ravana Falls</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ReligiousSite</IRI>
+        <Literal xml:lang="en">A place of active worship that also receives visitors.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ReligiousSite</IRI>
+        <Literal xml:lang="en">Religious site</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SafariActivity</IRI>
+        <Literal xml:lang="en">Jeep safari</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Sigiriya</IRI>
+        <Literal xml:lang="en">Sigiriya</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="#hasProvenance"/>
+        <IRI>#SigiriyaRockFortress</IRI>
+        <Literal>Central Cultural Fund site listing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SigiriyaRockFortress</IRI>
+        <Literal xml:lang="en">Fifth-century royal citadel built on a granite monolith, with the mirror wall and frescoes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SigiriyaRockFortress</IRI>
+        <Literal xml:lang="en">Sigiriya Rock Fortress</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SouthernProvince</IRI>
+        <Literal xml:lang="en">Southern Province</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SriPadaSeason</IRI>
+        <Literal xml:lang="en">Pilgrimage season on Adam&apos;s Peak, from Unduvap to Vesak poya.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SriPadaSeason</IRI>
+        <Literal xml:lang="en">Sri Pada pilgrimage season</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SurfingActivity</IRI>
+        <Literal xml:lang="en">Surfing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TempleOfTheTooth</IRI>
+        <Literal xml:lang="en">Royal palace complex housing the relic of the tooth of the Buddha.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TempleOfTheTooth</IRI>
+        <Literal xml:lang="en">Sri Dalada Maligawa (Temple of the Tooth)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TempleVisitActivity</IRI>
+        <Literal xml:lang="en">Temple visit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ThavaruniSelvam</IRI>
+        <Literal xml:lang="en">Thavaruni Selvam</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TissaSafariHotel</IRI>
+        <Literal xml:lang="en">Tissa Safari Hotel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Tissamaharama</IRI>
+        <Literal xml:lang="en">Tissamaharama</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Trincomalee</IRI>
+        <Literal xml:lang="en">Trincomalee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TrincomaleeDistrict</IRI>
+        <Literal xml:lang="en">Trincomalee District</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UNESCOWorldHeritage</IRI>
+        <Literal xml:lang="en">Inscribed on the UNESCO World Heritage List.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#UNESCOWorldHeritage</IRI>
+        <Literal xml:lang="en">UNESCO World Heritage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UNESCOWorldHeritageSite</IRI>
+        <Literal xml:lang="en">DEFINED: an Attraction whose heritage status is the UNESCO World Heritage designation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#UNESCOWorldHeritageSite</IRI>
+        <Literal xml:lang="en">UNESCO World Heritage site</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#UvaProvince</IRI>
+        <Literal xml:lang="en">Uva Province</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Visitor</IRI>
+        <Literal xml:lang="en">A person who visits attractions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Visitor</IRI>
+        <Literal xml:lang="en">Visitor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Waterfall</IRI>
+        <Literal xml:lang="en">A named cascade visited as a scenic site.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Waterfall</IRI>
+        <Literal xml:lang="en">Waterfall</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#WesternProvince</IRI>
+        <Literal xml:lang="en">Western Province</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#WhaleWatchingActivity</IRI>
+        <Literal xml:lang="en">Whale watching</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WildlifeActivity</IRI>
+        <Literal xml:lang="en">An activity centred on observing wild animals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#WildlifeActivity</IRI>
+        <Literal xml:lang="en">Wildlife activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WildlifeDestination</IRI>
+        <Literal xml:lang="en">DEFINED: an Attraction that offers at least one wildlife activity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#WildlifeDestination</IRI>
+        <Literal xml:lang="en">Wildlife destination</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#YalaNationalPark</IRI>
+        <Literal xml:lang="en">Largest visited national park, known for its leopard density.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#YalaNationalPark</IRI>
+        <Literal xml:lang="en">Yala National Park</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#annualVisitorsThousands</IRI>
+        <Literal xml:lang="en">Approximate yearly visitor count, in thousands.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#annualVisitorsThousands</IRI>
+        <Literal xml:lang="en">annual visitors (thousands)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#averageVisitDurationHours</IRI>
+        <Literal xml:lang="en">Typical time a visitor spends at the attraction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#averageVisitDurationHours</IRI>
+        <Literal xml:lang="en">average visit duration (hours)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cityInDistrict</IRI>
+        <Literal xml:lang="en">A city lies in exactly one district.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#cityInDistrict</IRI>
+        <Literal xml:lang="en">city in district</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#districtInProvince</IRI>
+        <Literal xml:lang="en">A district lies in exactly one province.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#districtInProvince</IRI>
+        <Literal xml:lang="en">district in province</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#elevationMetres</IRI>
+        <Literal xml:lang="en">Height above mean sea level.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#elevationMetres</IRI>
+        <Literal xml:lang="en">elevation (metres)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#entranceFeeLKR</IRI>
+        <Literal xml:lang="en">Foreign-visitor entrance fee in Sri Lankan rupees. Exactly one value per attraction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#entranceFeeLKR</IRI>
+        <Literal xml:lang="en">entrance fee (LKR)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAccessibility</IRI>
+        <Literal xml:lang="en">Links an attraction to exactly one value from the accessibility value partition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasAccessibility</IRI>
+        <Literal xml:lang="en">has accessibility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAttraction</IRI>
+        <Literal xml:lang="en">Inverse of locatedInCity. Never asserted; always inferred.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasAttraction</IRI>
+        <Literal xml:lang="en">has attraction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCapitalCity</IRI>
+        <Literal xml:lang="en">A province has exactly one capital, and a city is the capital of at most one province.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasCapitalCity</IRI>
+        <Literal xml:lang="en">has capital city</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasHeritageStatus</IRI>
+        <Literal xml:lang="en">A formal heritage designation held by the attraction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasHeritageStatus</IRI>
+        <Literal xml:lang="en">has heritage status</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasNearbyAccommodation</IRI>
+        <Literal xml:lang="en">Inverse of servesAttraction. Never asserted; always inferred.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasNearbyAccommodation</IRI>
+        <Literal xml:lang="en">has nearby accommodation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasProvenance</IRI>
+        <Literal xml:lang="en">Free-text note recording where a fact about an individual came from.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasProvenance</IRI>
+        <Literal xml:lang="en">has provenance</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasStarRating</IRI>
+        <Literal xml:lang="en">Tourist-board star rating of an accommodation, 1 to 5.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasStarRating</IRI>
+        <Literal xml:lang="en">has star rating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hostsFestival</IRI>
+        <Literal xml:lang="en">A festival held at this attraction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hostsFestival</IRI>
+        <Literal xml:lang="en">hosts festival</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#inscribedYear</IRI>
+        <Literal xml:lang="en">Year the site received its heritage designation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#inscribedYear</IRI>
+        <Literal xml:lang="en">inscribed year</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#locatedInCity</IRI>
+        <Literal xml:lang="en">Relates an attraction to the city or town it sits in.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#locatedInCity</IRI>
+        <Literal xml:lang="en">located in city</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#locatedInProvince</IRI>
+        <Literal xml:lang="en">Province of an attraction. Never asserted: derived by the property chain locatedInCity o cityInDistrict o districtInProvince.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#locatedInProvince</IRI>
+        <Literal xml:lang="en">located in province</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#nearbyAttraction</IRI>
+        <Literal xml:lang="en">Two attractions close enough to visit on the same day. Symmetric, so only one direction is asserted.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#nearbyAttraction</IRI>
+        <Literal xml:lang="en">nearby attraction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#offersActivity</IRI>
+        <Literal xml:lang="en">An activity a visitor can do at this attraction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#offersActivity</IRI>
+        <Literal xml:lang="en">offers activity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#openOnPoyaDays</IRI>
+        <Literal xml:lang="en">Whether the site admits visitors on full-moon poya holidays.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#openOnPoyaDays</IRI>
+        <Literal xml:lang="en">open on poya days</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#servesAttraction</IRI>
+        <Literal xml:lang="en">Accommodation within convenient reach of an attraction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#servesAttraction</IRI>
+        <Literal xml:lang="en">serves attraction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#visited</IRI>
+        <Literal xml:lang="en">Records that a visitor has been to an attraction.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#visited</IRI>
+        <Literal xml:lang="en">visited</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#withinArea</IRI>
+        <Literal xml:lang="en">Transitive containment between locations. cityInDistrict and districtInProvince are sub-properties, so a city is inferred to be within its province.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#withinArea</IRI>
+        <Literal xml:lang="en">within area</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,214 @@
+# ============================================================================
+#  Sri Lanka Tourism & Cultural Heritage Ontology
+#  Competency questions as SPARQL  —  Task 5
+#
+#  Ten queries. The assignment requires eight: 2 basic SELECT, 1 FILTER,
+#  1 OPTIONAL, 1 aggregation, 1 grouping/ordering and 2 over inferred
+#  knowledge. CQ7-CQ10 are the reasoning queries; four are supplied rather
+#  than two so that four different OWL constructs are each demonstrated once.
+#
+#  HOW TO RUN
+#  ----------
+#  Protege : Window > Tabs > SPARQL Query. Start the reasoner FIRST
+#            (Reasoner > HermiT, then Reasoner > Start reasoner), otherwise
+#            CQ6-CQ10 return nothing at all. Protege's SPARQL tab queries the
+#            asserted axioms plus whatever the reasoner has materialised.
+#  Web app : python app/app.py, then pick the question from the left rail and
+#            use the "Asserted only / With reasoning" switch.
+#
+#  Every query records below whether its answer is asserted or inferred.
+# ============================================================================
+
+
+# ----------------------------------------------------------------------------
+# CQ1 — Which attractions exist, and in which city is each one?
+# Feature   : Basic SELECT
+# Knowledge : ASSERTED  - no reasoning required
+# ----------------------------------------------------------------------------
+PREFIX slt:  <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?attraction ?city
+WHERE {
+  ?a slt:locatedInCity ?c .
+  ?a rdfs:label ?attraction .
+  ?c rdfs:label ?city .
+}
+ORDER BY ?city
+
+
+# ----------------------------------------------------------------------------
+# CQ2 — Which religious sites host a festival, and which festival?
+# Feature   : Basic SELECT
+# Knowledge : ASSERTED  — no reasoning required
+# ----------------------------------------------------------------------------
+PREFIX slt:  <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?site ?festival
+WHERE {
+  ?s slt:hostsFestival ?f .
+  ?s rdfs:label ?site .
+  ?f rdfs:label ?festival .
+}
+
+
+# ----------------------------------------------------------------------------
+# CQ3 — Which attractions can a visitor enter for under LKR 2500?
+# Feature   : FILTER
+# Knowledge : ASSERTED  — no reasoning required
+# ----------------------------------------------------------------------------
+PREFIX slt:  <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?attraction ?fee
+WHERE {
+  ?a slt:entranceFeeLKR ?fee .
+  ?a rdfs:label ?attraction .
+  FILTER (?fee < 2500)
+}
+ORDER BY ?fee
+
+
+# ----------------------------------------------------------------------------
+# CQ4 — Which attractions have nearby accommodation, and which do not?
+# Feature   : OPTIONAL
+# Knowledge : INFERRED  — returns nothing without a reasoner
+# ----------------------------------------------------------------------------
+PREFIX slt:  <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?attraction ?hotel
+WHERE {
+  ?a slt:entranceFeeLKR ?fee .          # every attraction carries a fee
+  ?a rdfs:label ?attraction .
+  OPTIONAL {                             # hasNearbyAccommodation is never asserted:
+    ?a slt:hasNearbyAccommodation ?h .   # it is the inverse of servesAttraction
+    ?h rdfs:label ?hotel .
+  }
+}
+ORDER BY ?attraction
+
+
+# ----------------------------------------------------------------------------
+# CQ5 — What is the average and maximum entrance fee across all attractions?
+# Feature   : Aggregation
+# Knowledge : ASSERTED  — no reasoning required
+# ----------------------------------------------------------------------------
+PREFIX slt:  <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT (COUNT(?a) AS ?sites)
+       (ROUND(AVG(?fee)) AS ?averageFee)
+       (MIN(?fee) AS ?cheapest)
+       (MAX(?fee) AS ?dearest)
+WHERE {
+  ?a slt:entranceFeeLKR ?fee .
+}
+
+
+# ----------------------------------------------------------------------------
+# CQ6 — How many attractions does each province hold, richest first?
+# Feature   : GROUP BY + ORDER BY
+# Knowledge : INFERRED  — returns nothing without a reasoner
+# ----------------------------------------------------------------------------
+PREFIX slt:  <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?province (COUNT(?a) AS ?attractions)
+WHERE {
+  ?a slt:locatedInProvince ?p .
+  ?p rdfs:label ?province .
+}
+GROUP BY ?province
+ORDER BY DESC(?attractions) ?province
+
+
+# ----------------------------------------------------------------------------
+# CQ7 — Which sites are UNESCO World Heritage sites?
+# Feature   : Reasoning
+# Knowledge : INFERRED  — returns nothing without a reasoner
+# ----------------------------------------------------------------------------
+PREFIX slt:  <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?site ?inscribed
+WHERE {
+  ?s rdf:type slt:UNESCOWorldHeritageSite .
+  ?s rdfs:label ?site .
+  OPTIONAL { ?s slt:inscribedYear ?inscribed }
+}
+ORDER BY ?inscribed
+
+
+# ----------------------------------------------------------------------------
+# CQ8 — Which attractions are in the Central Province?
+# Feature   : Reasoning
+# Knowledge : INFERRED  — returns nothing without a reasoner
+# ----------------------------------------------------------------------------
+PREFIX slt:  <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?attraction ?city
+WHERE {
+  ?a rdf:type slt:CentralProvinceAttraction .
+  ?a rdfs:label ?attraction .
+  ?a slt:locatedInCity ?c .
+  ?c rdfs:label ?city .
+}
+
+
+# ----------------------------------------------------------------------------
+# CQ9 — Which attractions offer three or more different activities?
+# Feature   : Reasoning
+# Knowledge : INFERRED  — returns nothing without a reasoner
+# ----------------------------------------------------------------------------
+PREFIX slt:  <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?attraction (COUNT(DISTINCT ?act) AS ?activities)
+WHERE {
+  ?a rdf:type slt:MultiActivityDestination .
+  ?a rdfs:label ?attraction .
+  ?a slt:offersActivity ?act .
+}
+GROUP BY ?attraction
+ORDER BY DESC(?activities)
+
+
+# ----------------------------------------------------------------------------
+# CQ10 — Which coastal attractions can be paired with a wildlife experience?
+# Feature   : Reasoning
+# Knowledge : INFERRED  — returns nothing without a reasoner
+# ----------------------------------------------------------------------------
+PREFIX slt:  <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?attraction ?city
+WHERE {
+  ?a rdf:type slt:CoastalAttraction .
+  ?a rdf:type slt:WildlifeDestination .
+  ?a rdfs:label ?attraction .
+  ?a slt:locatedInCity ?c .
+  ?c rdfs:label ?city .
+}

@@ -1,0 +1,1424 @@
+@prefix : <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix slt: <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism> .
+
+<http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism> rdf:type owl:Ontology ;
+                                                                  dcterms:created "2026-08-29"^^xsd:date ;
+                                                                  dcterms:creator "MSc in Artificial Intelligence, University of Moratuwa"@en ;
+                                                                  dcterms:description """An OWL 2 DL ontology describing tourist attractions in Sri Lanka, the
+administrative locations that contain them, the activities they offer, the festivals they host and
+the accommodation that serves them. Built for the Semantic Web and Ontologies coursework
+assignment: it is designed so that a description-logic reasoner derives location, classification and
+relationship facts that are never asserted directly."""@en ;
+                                                                  dcterms:title "Sri Lanka Tourism and Cultural Heritage Ontology"@en ;
+                                                                  rdfs:comment "Namespace prefix slt:. All local names use UpperCamelCase for classes and individuals, lowerCamelCase for properties."@en ;
+                                                                  owl:versionInfo "1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasProvenance
+slt:hasProvenance rdf:type owl:AnnotationProperty ;
+                  rdfs:comment "Free-text note recording where a fact about an individual came from."@en ;
+                  rdfs:label "has provenance"@en .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#cityInDistrict
+slt:cityInDistrict rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf slt:withinArea ;
+                   rdf:type owl:FunctionalProperty ;
+                   rdfs:domain slt:City ;
+                   rdfs:range slt:District ;
+                   rdfs:comment "A city lies in exactly one district."@en ;
+                   rdfs:label "city in district"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#districtInProvince
+slt:districtInProvince rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf slt:withinArea ;
+                       rdf:type owl:FunctionalProperty ;
+                       rdfs:domain slt:District ;
+                       rdfs:range slt:Province ;
+                       rdfs:comment "A district lies in exactly one province."@en ;
+                       rdfs:label "district in province"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasAccessibility
+slt:hasAccessibility rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain slt:Attraction ;
+                     rdfs:range slt:AccessibilityLevel ;
+                     rdfs:comment "Links an attraction to exactly one value from the accessibility value partition."@en ;
+                     rdfs:label "has accessibility"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasAttraction
+slt:hasAttraction rdf:type owl:ObjectProperty ;
+                  owl:inverseOf slt:locatedInCity ;
+                  rdfs:domain slt:City ;
+                  rdfs:range slt:Attraction ;
+                  rdfs:comment "Inverse of locatedInCity. Never asserted; always inferred."@en ;
+                  rdfs:label "has attraction"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasCapitalCity
+slt:hasCapitalCity rdf:type owl:ObjectProperty ,
+                            owl:FunctionalProperty ,
+                            owl:InverseFunctionalProperty ;
+                   rdfs:domain slt:Province ;
+                   rdfs:range slt:City ;
+                   rdfs:comment "A province has exactly one capital, and a city is the capital of at most one province."@en ;
+                   rdfs:label "has capital city"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasHeritageStatus
+slt:hasHeritageStatus rdf:type owl:ObjectProperty ;
+                      rdfs:domain slt:Attraction ;
+                      rdfs:range slt:HeritageStatus ;
+                      rdfs:comment "A formal heritage designation held by the attraction."@en ;
+                      rdfs:label "has heritage status"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasNearbyAccommodation
+slt:hasNearbyAccommodation rdf:type owl:ObjectProperty ;
+                           owl:inverseOf slt:servesAttraction ;
+                           rdfs:domain slt:Attraction ;
+                           rdfs:range slt:Accommodation ;
+                           rdfs:comment "Inverse of servesAttraction. Never asserted; always inferred."@en ;
+                           rdfs:label "has nearby accommodation"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hostsFestival
+slt:hostsFestival rdf:type owl:ObjectProperty ;
+                  rdfs:domain slt:Attraction ;
+                  rdfs:range slt:Festival ;
+                  rdfs:comment "A festival held at this attraction."@en ;
+                  rdfs:label "hosts festival"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#locatedInCity
+slt:locatedInCity rdf:type owl:ObjectProperty ,
+                           owl:AsymmetricProperty ,
+                           owl:IrreflexiveProperty ;
+                  rdfs:domain slt:Attraction ;
+                  rdfs:range slt:City ;
+                  rdfs:comment "Relates an attraction to the city or town it sits in."@en ;
+                  rdfs:label "located in city"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#locatedInProvince
+slt:locatedInProvince rdf:type owl:ObjectProperty ;
+                      rdfs:domain slt:Attraction ;
+                      rdfs:range slt:Province ;
+                      owl:propertyChainAxiom ( slt:locatedInCity
+                                               slt:cityInDistrict
+                                               slt:districtInProvince
+                                             ) ;
+                      rdfs:comment "Province of an attraction. Never asserted: derived by the property chain locatedInCity o cityInDistrict o districtInProvince."@en ;
+                      rdfs:label "located in province"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#nearbyAttraction
+slt:nearbyAttraction rdf:type owl:ObjectProperty ,
+                              owl:SymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain slt:Attraction ;
+                     rdfs:range slt:Attraction ;
+                     rdfs:comment "Two attractions close enough to visit on the same day. Symmetric, so only one direction is asserted."@en ;
+                     rdfs:label "nearby attraction"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#offersActivity
+slt:offersActivity rdf:type owl:ObjectProperty ;
+                   rdfs:domain slt:Attraction ;
+                   rdfs:range slt:Activity ;
+                   rdfs:comment "An activity a visitor can do at this attraction."@en ;
+                   rdfs:label "offers activity"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#servesAttraction
+slt:servesAttraction rdf:type owl:ObjectProperty ;
+                     rdfs:domain slt:Accommodation ;
+                     rdfs:range slt:Attraction ;
+                     rdfs:comment "Accommodation within convenient reach of an attraction."@en ;
+                     rdfs:label "serves attraction"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#visited
+slt:visited rdf:type owl:ObjectProperty ;
+            rdfs:domain slt:Visitor ;
+            rdfs:range slt:Attraction ;
+            rdfs:comment "Records that a visitor has been to an attraction."@en ;
+            rdfs:label "visited"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#withinArea
+slt:withinArea rdf:type owl:ObjectProperty ,
+                        owl:TransitiveProperty ;
+               rdfs:domain slt:Location ;
+               rdfs:range slt:Location ;
+               rdfs:comment "Transitive containment between locations. cityInDistrict and districtInProvince are sub-properties, so a city is inferred to be within its province."@en ;
+               rdfs:label "within area"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#annualVisitorsThousands
+slt:annualVisitorsThousands rdf:type owl:DatatypeProperty ;
+                            rdfs:domain slt:Attraction ;
+                            rdfs:range xsd:int ;
+                            rdfs:comment "Approximate yearly visitor count, in thousands."@en ;
+                            rdfs:label "annual visitors (thousands)"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#averageVisitDurationHours
+slt:averageVisitDurationHours rdf:type owl:DatatypeProperty ;
+                              rdfs:domain slt:Attraction ;
+                              rdfs:range xsd:decimal ;
+                              rdfs:comment "Typical time a visitor spends at the attraction."@en ;
+                              rdfs:label "average visit duration (hours)"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#elevationMetres
+slt:elevationMetres rdf:type owl:DatatypeProperty ;
+                    rdfs:domain slt:Attraction ;
+                    rdfs:range xsd:decimal ;
+                    rdfs:comment "Height above mean sea level."@en ;
+                    rdfs:label "elevation (metres)"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#entranceFeeLKR
+slt:entranceFeeLKR rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain slt:Attraction ;
+                   rdfs:range xsd:decimal ;
+                   rdfs:comment "Foreign-visitor entrance fee in Sri Lankan rupees. Exactly one value per attraction."@en ;
+                   rdfs:label "entrance fee (LKR)"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasStarRating
+slt:hasStarRating rdf:type owl:DatatypeProperty ;
+                  rdfs:domain slt:Accommodation ;
+                  rdfs:range xsd:int ;
+                  rdfs:comment "Tourist-board star rating of an accommodation, 1 to 5."@en ;
+                  rdfs:label "has star rating"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#inscribedYear
+slt:inscribedYear rdf:type owl:DatatypeProperty ;
+                  rdfs:domain slt:Attraction ;
+                  rdfs:range xsd:int ;
+                  rdfs:comment "Year the site received its heritage designation."@en ;
+                  rdfs:label "inscribed year"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#openOnPoyaDays
+slt:openOnPoyaDays rdf:type owl:DatatypeProperty ;
+                   rdfs:domain slt:Attraction ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:comment "Whether the site admits visitors on full-moon poya holidays."@en ;
+                   rdfs:label "open on poya days"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AccessibilityLevel
+slt:AccessibilityLevel rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Class ;
+                                         owl:unionOf ( slt:DifficultAccess
+                                                       slt:EasyAccess
+                                                       slt:ModerateAccess
+                                                     )
+                                       ] ;
+                       rdfs:comment "How hard the attraction is to reach. Exhaustively partitioned into Easy, Moderate and Difficult."@en ;
+                       rdfs:label "Accessibility level"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Accommodation
+slt:Accommodation rdf:type owl:Class ;
+                  rdfs:comment "A place where visitors stay overnight."@en ;
+                  rdfs:label "Accommodation"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Activity
+slt:Activity rdf:type owl:Class ;
+             rdfs:comment "Something a visitor can do at an attraction."@en ;
+             rdfs:label "Activity"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AdventureActivity
+slt:AdventureActivity rdf:type owl:Class ;
+                      rdfs:subClassOf slt:Activity ;
+                      rdfs:comment "A physically demanding outdoor activity."@en ;
+                      rdfs:label "Adventure activity"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ArchaeologicalSite
+slt:ArchaeologicalSite rdf:type owl:Class ;
+                       rdfs:subClassOf slt:CulturalAttraction ;
+                       rdfs:comment "An excavated or conserved ancient settlement or monument."@en ;
+                       rdfs:label "Archaeological site"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction
+slt:Attraction rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Class ;
+                                 owl:unionOf ( slt:CulturalAttraction
+                                               slt:NaturalAttraction
+                                             )
+                               ] ;
+               rdfs:comment "Any site in Sri Lanka that a visitor may travel to see. Root of the attraction taxonomy."@en ;
+               rdfs:label "Attraction"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Beach
+slt:Beach rdf:type owl:Class ;
+          rdfs:subClassOf slt:NaturalAttraction ;
+          rdfs:comment "A coastal sand or rock shoreline visited for recreation."@en ;
+          rdfs:label "Beach"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BuddhistTemple
+slt:BuddhistTemple rdf:type owl:Class ;
+                   rdfs:subClassOf slt:ReligiousSite ;
+                   rdfs:comment "A vihara, dagaba or cave temple of the Buddhist tradition."@en ;
+                   rdfs:label "Buddhist temple"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BudgetAttraction
+slt:BudgetAttraction rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( slt:Attraction
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty slt:entranceFeeLKR ;
+                                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                       owl:onDatatype xsd:decimal ;
+                                                                                       owl:withRestrictions ( [ xsd:maxExclusive 2500
+                                                                                                              ]
+                                                                                                            )
+                                                                                     ]
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:comment "DEFINED: an Attraction whose entrance fee is below LKR 2500. Uses an OWL 2 datatype restriction on a data property."@en ;
+                     rdfs:label "Budget attraction"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CentralProvinceAttraction
+slt:CentralProvinceAttraction rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( slt:Attraction
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty slt:locatedInProvince ;
+                                                                           owl:hasValue slt:CentralProvince
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:comment "DEFINED: an Attraction located in the Central Province. Membership depends entirely on the locatedInProvince property chain."@en ;
+                              rdfs:label "Central Province attraction"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Church
+slt:Church rdf:type owl:Class ;
+           rdfs:subClassOf slt:ReligiousSite ;
+           rdfs:comment "A Christian place of worship."@en ;
+           rdfs:label "Church"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City
+slt:City rdf:type owl:Class ;
+         rdfs:subClassOf slt:Location ;
+         rdfs:comment "A city or town within a district."@en ;
+         rdfs:label "City"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CoastalAttraction
+slt:CoastalAttraction rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( slt:Attraction
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty slt:locatedInCity ;
+                                                                   owl:someValuesFrom slt:CoastalCity
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:comment "DEFINED: an Attraction located in a coastal city."@en ;
+                      rdfs:label "Coastal attraction"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CoastalCity
+slt:CoastalCity rdf:type owl:Class ;
+                rdfs:subClassOf slt:City ;
+                rdfs:comment "A city that lies on the coastline. Used to derive coastal attractions."@en ;
+                rdfs:label "Coastal city"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ColonialFort
+slt:ColonialFort rdf:type owl:Class ;
+                 rdfs:subClassOf slt:CulturalAttraction ;
+                 rdfs:comment "A Portuguese, Dutch or British military fortification."@en ;
+                 rdfs:label "Colonial fort"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalActivity
+slt:CulturalActivity rdf:type owl:Class ;
+                     rdfs:subClassOf slt:Activity ;
+                     rdfs:comment "An activity centred on heritage, religion or local tradition."@en ;
+                     rdfs:label "Cultural activity"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalAttraction
+slt:CulturalAttraction rdf:type owl:Class ;
+                       rdfs:subClassOf slt:Attraction ;
+                       owl:disjointWith slt:NaturalAttraction ;
+                       rdfs:comment "An attraction whose primary value is human-made: religious, archaeological or colonial."@en ;
+                       rdfs:label "Cultural attraction"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DifficultAccess
+slt:DifficultAccess rdf:type owl:Class ;
+                    rdfs:subClassOf slt:AccessibilityLevel .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District
+slt:District rdf:type owl:Class ;
+             rdfs:subClassOf slt:Location ;
+             rdfs:comment "An administrative district within a province."@en ;
+             rdfs:label "District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DomesticVisitor
+slt:DomesticVisitor rdf:type owl:Class ;
+                    rdfs:subClassOf slt:Visitor ;
+                    owl:disjointWith slt:ForeignVisitor ;
+                    rdfs:label "Domestic visitor"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess
+slt:EasyAccess rdf:type owl:Class ;
+               rdfs:subClassOf slt:AccessibilityLevel .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EcoLodge
+slt:EcoLodge rdf:type owl:Class ;
+             rdfs:subClassOf slt:Accommodation ;
+             rdfs:label "Eco lodge"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Festival
+slt:Festival rdf:type owl:Class ;
+             rdfs:comment "A recurring cultural or religious event hosted at an attraction."@en ;
+             rdfs:label "Festival"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ForeignVisitor
+slt:ForeignVisitor rdf:type owl:Class ;
+                   rdfs:subClassOf slt:Visitor ;
+                   rdfs:label "Foreign visitor"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Guesthouse
+slt:Guesthouse rdf:type owl:Class ;
+               rdfs:subClassOf slt:Accommodation ;
+               rdfs:label "Guesthouse"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageStatus
+slt:HeritageStatus rdf:type owl:Class ;
+                   rdfs:comment "A formal heritage designation held by an attraction."@en ;
+                   rdfs:label "Heritage status"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HinduKovil
+slt:HinduKovil rdf:type owl:Class ;
+               rdfs:subClassOf slt:ReligiousSite ;
+               rdfs:comment "A Hindu temple, called a kovil in Sri Lankan usage."@en ;
+               rdfs:label "Hindu kovil"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HistoricLandmark
+slt:HistoricLandmark rdf:type owl:Class ;
+                     rdfs:subClassOf slt:CulturalAttraction ;
+                     rdfs:comment "A notable engineering or civic structure of historic interest, such as a colonial-era bridge."@en ;
+                     rdfs:label "Historic landmark"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Hotel
+slt:Hotel rdf:type owl:Class ;
+          rdfs:subClassOf slt:Accommodation ;
+          rdfs:label "Hotel"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Location
+slt:Location rdf:type owl:Class ;
+             rdfs:comment "An administrative or geographic place. Provinces contain districts, districts contain cities."@en ;
+             rdfs:label "Location"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess
+slt:ModerateAccess rdf:type owl:Class ;
+                   rdfs:subClassOf slt:AccessibilityLevel .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mosque
+slt:Mosque rdf:type owl:Class ;
+           rdfs:subClassOf slt:ReligiousSite ;
+           rdfs:comment "An Islamic place of worship."@en ;
+           rdfs:label "Mosque"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mountain
+slt:Mountain rdf:type owl:Class ;
+             rdfs:subClassOf slt:NaturalAttraction ;
+             rdfs:comment "A peak or highland summit reached on foot."@en ;
+             rdfs:label "Mountain"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MultiActivityDestination
+slt:MultiActivityDestination rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( slt:Attraction
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty slt:offersActivity ;
+                                                                          owl:minQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass slt:Activity
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ;
+                             rdfs:comment "DEFINED: an Attraction offering three or more distinct activities. Uses a qualified minimum cardinality restriction."@en ;
+                             rdfs:label "Multi-activity destination"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalPark
+slt:NationalPark rdf:type owl:Class ;
+                 rdfs:subClassOf slt:NaturalAttraction ;
+                 rdfs:comment "A protected wildlife reserve managed by the Department of Wildlife Conservation."@en ;
+                 rdfs:label "National park"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NaturalAttraction
+slt:NaturalAttraction rdf:type owl:Class ;
+                      rdfs:subClassOf slt:Attraction ;
+                      rdfs:comment "An attraction whose primary value is a landscape, ecosystem or geological feature."@en ;
+                      rdfs:label "Natural attraction"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PilgrimageDestination
+slt:PilgrimageDestination rdf:type owl:Class ;
+                          owl:equivalentClass [ owl:intersectionOf ( slt:Attraction
+                                                                     [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty slt:hostsFestival ;
+                                                                       owl:someValuesFrom slt:Festival
+                                                                     ]
+                                                                   ) ;
+                                                rdf:type owl:Class
+                                              ] ;
+                          rdfs:comment "DEFINED: an Attraction that hosts at least one festival."@en ;
+                          rdfs:label "Pilgrimage destination"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province
+slt:Province rdf:type owl:Class ;
+             rdfs:subClassOf slt:Location ;
+             rdfs:comment "One of the nine provinces of Sri Lanka."@en ;
+             rdfs:label "Province"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ReligiousSite
+slt:ReligiousSite rdf:type owl:Class ;
+                  rdfs:subClassOf slt:CulturalAttraction ;
+                  rdfs:comment "A place of active worship that also receives visitors."@en ;
+                  rdfs:label "Religious site"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritageSite
+slt:UNESCOWorldHeritageSite rdf:type owl:Class ;
+                            owl:equivalentClass [ owl:intersectionOf ( slt:Attraction
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty slt:hasHeritageStatus ;
+                                                                         owl:hasValue slt:UNESCOWorldHeritage
+                                                                       ]
+                                                                     ) ;
+                                                  rdf:type owl:Class
+                                                ] ;
+                            rdfs:comment "DEFINED: an Attraction whose heritage status is the UNESCO World Heritage designation."@en ;
+                            rdfs:label "UNESCO World Heritage site"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Visitor
+slt:Visitor rdf:type owl:Class ;
+            rdfs:comment "A person who visits attractions."@en ;
+            rdfs:label "Visitor"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Waterfall
+slt:Waterfall rdf:type owl:Class ;
+              rdfs:subClassOf slt:NaturalAttraction ;
+              rdfs:comment "A named cascade visited as a scenic site."@en ;
+              rdfs:label "Waterfall"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WildlifeActivity
+slt:WildlifeActivity rdf:type owl:Class ;
+                     rdfs:subClassOf slt:Activity ;
+                     rdfs:comment "An activity centred on observing wild animals."@en ;
+                     rdfs:label "Wildlife activity"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WildlifeDestination
+slt:WildlifeDestination rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( slt:Attraction
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty slt:offersActivity ;
+                                                                     owl:someValuesFrom slt:WildlifeActivity
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:comment "DEFINED: an Attraction that offers at least one wildlife activity."@en ;
+                        rdfs:label "Wildlife destination"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AdamsPeak
+slt:AdamsPeak rdf:type owl:NamedIndividual ,
+                       slt:Mountain ;
+              slt:hasAccessibility slt:DifficultAccess ;
+              slt:hasHeritageStatus slt:NationalHeritage ;
+              slt:hostsFestival slt:SriPadaSeason ;
+              slt:locatedInCity slt:Hatton ;
+              slt:offersActivity slt:HikingActivity ,
+                                 slt:PhotographyActivity ,
+                                 slt:TempleVisitActivity ;
+              slt:annualVisitorsThousands 250 ;
+              slt:averageVisitDurationHours 7 ;
+              slt:elevationMetres 2243 ;
+              slt:entranceFeeLKR 0 ;
+              slt:openOnPoyaDays "true"^^xsd:boolean ;
+              rdfs:comment "Conical summit venerated by four religions, climbed overnight during pilgrimage season."@en ;
+              rdfs:label "Adam's Peak (Sri Pada)"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AmarasiriPerera
+slt:AmarasiriPerera rdf:type owl:NamedIndividual ,
+                             slt:DomesticVisitor ;
+                    slt:visited slt:AdamsPeak ,
+                                slt:DambullaCaveTemple ,
+                                slt:TempleOfTheTooth ;
+                    rdfs:label "Amarasiri Perera"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Anuradhapura
+slt:Anuradhapura rdf:type owl:NamedIndividual ,
+                          slt:City ;
+                 slt:cityInDistrict slt:AnuradhapuraDistrict ;
+                 rdfs:label "Anuradhapura"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AnuradhapuraDistrict
+slt:AnuradhapuraDistrict rdf:type owl:NamedIndividual ,
+                                  slt:District ;
+                         slt:districtInProvince slt:NorthCentralProvince ;
+                         rdfs:label "Anuradhapura District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AnuradhapuraSacredCity
+slt:AnuradhapuraSacredCity rdf:type owl:NamedIndividual ,
+                                    slt:ArchaeologicalSite ;
+                           slt:hasAccessibility slt:EasyAccess ;
+                           slt:hasHeritageStatus slt:UNESCOWorldHeritage ;
+                           slt:locatedInCity slt:Anuradhapura ;
+                           slt:offersActivity slt:CyclingActivity ,
+                                              slt:HeritageWalkActivity ,
+                                              slt:TempleVisitActivity ;
+                           slt:annualVisitorsThousands 340 ;
+                           slt:averageVisitDurationHours 5 ;
+                           slt:entranceFeeLKR 7500 ;
+                           slt:inscribedYear 1982 ;
+                           slt:openOnPoyaDays "true"^^xsd:boolean ;
+                           rdfs:comment "First capital of Sri Lanka, containing the Sri Maha Bodhi and several great stupas."@en ;
+                           rdfs:label "Sacred City of Anuradhapura"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Badulla
+slt:Badulla rdf:type owl:NamedIndividual ,
+                     slt:City ;
+            slt:cityInDistrict slt:BadullaDistrict ;
+            rdfs:label "Badulla"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BadullaDistrict
+slt:BadullaDistrict rdf:type owl:NamedIndividual ,
+                             slt:District ;
+                    slt:districtInProvince slt:UvaProvince ;
+                    rdfs:label "Badulla District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BirdwatchingActivity
+slt:BirdwatchingActivity rdf:type owl:NamedIndividual ,
+                                  slt:WildlifeActivity ;
+                         rdfs:label "Birdwatching"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CentralProvince
+slt:CentralProvince rdf:type owl:NamedIndividual ,
+                             slt:Province ;
+                    slt:hasCapitalCity slt:Kandy ;
+                    rdfs:label "Central Province"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Colombo
+slt:Colombo rdf:type owl:NamedIndividual ,
+                     slt:CoastalCity ;
+            slt:cityInDistrict slt:ColomboDistrict ;
+            rdfs:label "Colombo"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ColomboDistrict
+slt:ColomboDistrict rdf:type owl:NamedIndividual ,
+                             slt:District ;
+                    slt:districtInProvince slt:WesternProvince ;
+                    rdfs:label "Colombo District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CyclingActivity
+slt:CyclingActivity rdf:type owl:NamedIndividual ,
+                             slt:AdventureActivity ;
+                    rdfs:label "Cycling"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Dambulla
+slt:Dambulla rdf:type owl:NamedIndividual ,
+                      slt:City ;
+             slt:cityInDistrict slt:MataleDistrict ;
+             rdfs:label "Dambulla"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DambullaCaveTemple
+slt:DambullaCaveTemple rdf:type owl:NamedIndividual ,
+                                slt:BuddhistTemple ;
+                       slt:hasAccessibility slt:ModerateAccess ;
+                       slt:hasHeritageStatus slt:UNESCOWorldHeritage ;
+                       slt:locatedInCity slt:Dambulla ;
+                       slt:offersActivity slt:HeritageWalkActivity ,
+                                          slt:TempleVisitActivity ;
+                       slt:annualVisitorsThousands 420 ;
+                       slt:averageVisitDurationHours 2 ;
+                       slt:elevationMetres 340 ;
+                       slt:entranceFeeLKR 2000 ;
+                       slt:inscribedYear 1991 ;
+                       slt:openOnPoyaDays "true"^^xsd:boolean ;
+                       rdfs:comment "Five cave shrines containing 153 Buddha statues and painted ceilings."@en ;
+                       rdfs:label "Dambulla Royal Cave Temple"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DifficultAccess
+slt:DifficultAccess rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasternProvince
+slt:EasternProvince rdf:type owl:NamedIndividual ,
+                             slt:Province ;
+                    slt:hasCapitalCity slt:Trincomalee ;
+                    rdfs:label "Eastern Province"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess
+slt:EasyAccess rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Ella
+slt:Ella rdf:type owl:NamedIndividual ,
+                  slt:City ;
+         slt:cityInDistrict slt:BadullaDistrict ;
+         rdfs:label "Ella"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EllaMountainEcoLodge
+slt:EllaMountainEcoLodge rdf:type owl:NamedIndividual ,
+                                  slt:EcoLodge ;
+                         slt:servesAttraction slt:NineArchBridge ,
+                                              slt:RavanaFalls ;
+                         slt:hasStarRating 3 ;
+                         rdfs:label "Ella Mountain Eco Lodge"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EsalaPerahera
+slt:EsalaPerahera rdf:type owl:NamedIndividual ,
+                           slt:Festival ;
+                  rdfs:comment "Annual procession of the Sacred Tooth Relic, held in Kandy."@en ;
+                  rdfs:label "Kandy Esala Perahera"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Galle
+slt:Galle rdf:type owl:NamedIndividual ,
+                   slt:CoastalCity ;
+          slt:cityInDistrict slt:GalleDistrict ;
+          rdfs:label "Galle"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#GalleDistrict
+slt:GalleDistrict rdf:type owl:NamedIndividual ,
+                           slt:District ;
+                  slt:districtInProvince slt:SouthernProvince ;
+                  rdfs:label "Galle District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#GalleFort
+slt:GalleFort rdf:type owl:NamedIndividual ,
+                       slt:ColonialFort ;
+              slt:hasAccessibility slt:EasyAccess ;
+              slt:hasHeritageStatus slt:UNESCOWorldHeritage ;
+              slt:locatedInCity slt:Galle ;
+              slt:offersActivity slt:CyclingActivity ,
+                                 slt:HeritageWalkActivity ,
+                                 slt:PhotographyActivity ;
+              slt:annualVisitorsThousands 900 ;
+              slt:averageVisitDurationHours 3 ;
+              slt:entranceFeeLKR 0 ;
+              slt:inscribedYear 1988 ;
+              slt:openOnPoyaDays "true"^^xsd:boolean ;
+              rdfs:comment "Fortified Dutch colonial town, still inhabited, on the southern coast."@en ;
+              rdfs:label "Galle Fort"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HambantotaDistrict
+slt:HambantotaDistrict rdf:type owl:NamedIndividual ,
+                                slt:District ;
+                       slt:districtInProvince slt:SouthernProvince ;
+                       rdfs:label "Hambantota District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HannaSchmidt
+slt:HannaSchmidt rdf:type owl:NamedIndividual ,
+                          slt:ForeignVisitor ;
+                 slt:visited slt:GalleFort ,
+                             slt:MirissaBeach ,
+                             slt:SigiriyaRockFortress ,
+                             slt:YalaNationalPark ;
+                 rdfs:label "Hanna Schmidt"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Hatton
+slt:Hatton rdf:type owl:NamedIndividual ,
+                    slt:City ;
+           slt:cityInDistrict slt:NuwaraEliyaDistrict ;
+           rdfs:label "Hatton"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity
+slt:HeritageWalkActivity rdf:type owl:NamedIndividual ,
+                                  slt:CulturalActivity ;
+                         rdfs:label "Guided heritage walk"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HikingActivity
+slt:HikingActivity rdf:type owl:NamedIndividual ,
+                            slt:AdventureActivity ;
+                   rdfs:label "Hiking"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HortonPlains
+slt:HortonPlains rdf:type owl:NamedIndividual ,
+                          slt:NationalPark ;
+                 slt:hasAccessibility slt:ModerateAccess ;
+                 slt:locatedInCity slt:NuwaraEliya ;
+                 slt:offersActivity slt:BirdwatchingActivity ,
+                                    slt:HikingActivity ,
+                                    slt:PhotographyActivity ;
+                 slt:annualVisitorsThousands 190 ;
+                 slt:averageVisitDurationHours 4 ;
+                 slt:elevationMetres 2100 ;
+                 slt:entranceFeeLKR 4000 ;
+                 slt:openOnPoyaDays "true"^^xsd:boolean ;
+                 rdfs:comment "Montane grassland plateau containing World's End escarpment and Baker's Falls."@en ;
+                 rdfs:label "Horton Plains National Park"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Jaffna
+slt:Jaffna rdf:type owl:NamedIndividual ,
+                    slt:CoastalCity ;
+           slt:cityInDistrict slt:JaffnaDistrict ;
+           rdfs:label "Jaffna"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaDistrict
+slt:JaffnaDistrict rdf:type owl:NamedIndividual ,
+                            slt:District ;
+                   slt:districtInProvince slt:NorthernProvince ;
+                   rdfs:label "Jaffna District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaFort
+slt:JaffnaFort rdf:type owl:NamedIndividual ,
+                        slt:ColonialFort ;
+               slt:hasAccessibility slt:EasyAccess ;
+               slt:hasHeritageStatus slt:NationalHeritage ;
+               slt:locatedInCity slt:Jaffna ;
+               slt:offersActivity slt:CyclingActivity ,
+                                  slt:HeritageWalkActivity ,
+                                  slt:PhotographyActivity ;
+               slt:annualVisitorsThousands 120 ;
+               slt:averageVisitDurationHours 1.5 ;
+               slt:entranceFeeLKR 0 ;
+               slt:openOnPoyaDays "true"^^xsd:boolean ;
+               rdfs:comment "Pentagonal Portuguese fort rebuilt by the Dutch, on the Jaffna lagoon."@en ;
+               rdfs:label "Jaffna Fort"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaHeritageGuesthouse
+slt:JaffnaHeritageGuesthouse rdf:type owl:NamedIndividual ,
+                                      slt:Guesthouse ;
+                             slt:servesAttraction slt:JaffnaFort ,
+                                                  slt:NallurKandaswamyKovil ;
+                             slt:hasStarRating 3 ;
+                             rdfs:label "Jaffna Heritage Guesthouse"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Kandy
+slt:Kandy rdf:type owl:NamedIndividual ,
+                   slt:City ;
+          slt:cityInDistrict slt:KandyDistrict ;
+          rdfs:label "Kandy"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#KandyDistrict
+slt:KandyDistrict rdf:type owl:NamedIndividual ,
+                           slt:District ;
+                  slt:districtInProvince slt:CentralProvince ;
+                  rdfs:label "Kandy District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#KandyLakeHotel
+slt:KandyLakeHotel rdf:type owl:NamedIndividual ,
+                            slt:Hotel ;
+                   slt:servesAttraction slt:TempleOfTheTooth ;
+                   slt:hasStarRating 4 ;
+                   rdfs:label "Kandy Lake Hotel"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#KoneswaramTemple
+slt:KoneswaramTemple rdf:type owl:NamedIndividual ,
+                              slt:HinduKovil ;
+                     slt:hasAccessibility slt:EasyAccess ;
+                     slt:hasHeritageStatus slt:NationalHeritage ;
+                     slt:locatedInCity slt:Trincomalee ;
+                     slt:offersActivity slt:PhotographyActivity ,
+                                        slt:TempleVisitActivity ;
+                     slt:annualVisitorsThousands 200 ;
+                     slt:averageVisitDurationHours 1 ;
+                     slt:elevationMetres 130 ;
+                     slt:entranceFeeLKR 0 ;
+                     slt:openOnPoyaDays "true"^^xsd:boolean ;
+                     rdfs:comment "Cliff-top Hindu temple on Swami Rock above Trincomalee harbour."@en ;
+                     rdfs:label "Koneswaram Temple"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MataleDistrict
+slt:MataleDistrict rdf:type owl:NamedIndividual ,
+                            slt:District ;
+                   slt:districtInProvince slt:CentralProvince ;
+                   rdfs:label "Matale District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MataraDistrict
+slt:MataraDistrict rdf:type owl:NamedIndividual ,
+                            slt:District ;
+                   slt:districtInProvince slt:SouthernProvince ;
+                   rdfs:label "Matara District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mirissa
+slt:Mirissa rdf:type owl:NamedIndividual ,
+                     slt:CoastalCity ;
+            slt:cityInDistrict slt:MataraDistrict ;
+            rdfs:label "Mirissa"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MirissaBeach
+slt:MirissaBeach rdf:type owl:NamedIndividual ,
+                          slt:Beach ;
+                 slt:hasAccessibility slt:EasyAccess ;
+                 slt:locatedInCity slt:Mirissa ;
+                 slt:offersActivity slt:PhotographyActivity ,
+                                    slt:SurfingActivity ,
+                                    slt:WhaleWatchingActivity ;
+                 slt:annualVisitorsThousands 480 ;
+                 slt:averageVisitDurationHours 4 ;
+                 slt:entranceFeeLKR 0 ;
+                 slt:openOnPoyaDays "true"^^xsd:boolean ;
+                 rdfs:comment "Crescent bay on the south coast, the main departure point for blue whale watching."@en ;
+                 rdfs:label "Mirissa Beach"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess
+slt:ModerateAccess rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NallurFestival
+slt:NallurFestival rdf:type owl:NamedIndividual ,
+                            slt:Festival ;
+                   rdfs:comment "Twenty-five day Hindu festival held in Jaffna."@en ;
+                   rdfs:label "Nallur Festival"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NallurKandaswamyKovil
+slt:NallurKandaswamyKovil rdf:type owl:NamedIndividual ,
+                                   slt:HinduKovil ;
+                          slt:hasAccessibility slt:EasyAccess ;
+                          slt:hasHeritageStatus slt:NationalHeritage ;
+                          slt:hostsFestival slt:NallurFestival ;
+                          slt:locatedInCity slt:Jaffna ;
+                          slt:nearbyAttraction slt:JaffnaFort ;
+                          slt:offersActivity slt:TempleVisitActivity ;
+                          slt:annualVisitorsThousands 300 ;
+                          slt:averageVisitDurationHours 1 ;
+                          slt:entranceFeeLKR 0 ;
+                          slt:openOnPoyaDays "true"^^xsd:boolean ;
+                          rdfs:comment "Principal Hindu temple of Jaffna, dedicated to Lord Murugan."@en ;
+                          rdfs:label "Nallur Kandaswamy Kovil"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalHeritage
+slt:NationalHeritage rdf:type owl:NamedIndividual ,
+                              slt:HeritageStatus ;
+                     owl:differentFrom slt:UNESCOWorldHeritage ;
+                     rdfs:comment "Protected monument under the Sri Lankan Antiquities Ordinance."@en ;
+                     rdfs:label "National Heritage"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NineArchBridge
+slt:NineArchBridge rdf:type owl:NamedIndividual ,
+                            slt:HistoricLandmark ;
+                   slt:hasAccessibility slt:ModerateAccess ;
+                   slt:hasHeritageStatus slt:NationalHeritage ;
+                   slt:locatedInCity slt:Ella ;
+                   slt:nearbyAttraction slt:RavanaFalls ;
+                   slt:offersActivity slt:HikingActivity ,
+                                      slt:PhotographyActivity ;
+                   slt:annualVisitorsThousands 400 ;
+                   slt:averageVisitDurationHours 1.5 ;
+                   slt:elevationMetres 930 ;
+                   slt:entranceFeeLKR 0 ;
+                   slt:openOnPoyaDays "true"^^xsd:boolean ;
+                   rdfs:comment "Colonial-era stone viaduct on the Badulla railway line, built without steel."@en ;
+                   rdfs:label "Nine Arch Bridge"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NorthCentralProvince
+slt:NorthCentralProvince rdf:type owl:NamedIndividual ,
+                                  slt:Province ;
+                         slt:hasCapitalCity slt:Anuradhapura ;
+                         rdfs:label "North Central Province"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NorthernProvince
+slt:NorthernProvince rdf:type owl:NamedIndividual ,
+                              slt:Province ;
+                     slt:hasCapitalCity slt:Jaffna ;
+                     rdfs:label "Northern Province"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NuwaraEliya
+slt:NuwaraEliya rdf:type owl:NamedIndividual ,
+                         slt:City ;
+                slt:cityInDistrict slt:NuwaraEliyaDistrict ;
+                rdfs:label "Nuwara Eliya"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NuwaraEliyaDistrict
+slt:NuwaraEliyaDistrict rdf:type owl:NamedIndividual ,
+                                 slt:District ;
+                        slt:districtInProvince slt:CentralProvince ;
+                        rdfs:label "Nuwara Eliya District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity
+slt:PhotographyActivity rdf:type owl:NamedIndividual ,
+                                 slt:CulturalActivity ;
+                        rdfs:label "Photography"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Polonnaruwa
+slt:Polonnaruwa rdf:type owl:NamedIndividual ,
+                         slt:City ;
+                slt:cityInDistrict slt:PolonnaruwaDistrict ;
+                rdfs:label "Polonnaruwa"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PolonnaruwaAncientCity
+slt:PolonnaruwaAncientCity rdf:type owl:NamedIndividual ,
+                                    slt:ArchaeologicalSite ;
+                           slt:hasAccessibility slt:EasyAccess ;
+                           slt:hasHeritageStatus slt:UNESCOWorldHeritage ;
+                           slt:locatedInCity slt:Polonnaruwa ;
+                           slt:offersActivity slt:CyclingActivity ,
+                                              slt:HeritageWalkActivity ,
+                                              slt:PhotographyActivity ;
+                           slt:annualVisitorsThousands 280 ;
+                           slt:averageVisitDurationHours 4 ;
+                           slt:entranceFeeLKR 7500 ;
+                           slt:inscribedYear 1982 ;
+                           slt:openOnPoyaDays "true"^^xsd:boolean ;
+                           rdfs:comment "Second capital, containing the Gal Vihara rock sculptures and the Parakrama Samudra."@en ;
+                           rdfs:label "Ancient City of Polonnaruwa"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PolonnaruwaDistrict
+slt:PolonnaruwaDistrict rdf:type owl:NamedIndividual ,
+                                 slt:District ;
+                        slt:districtInProvince slt:NorthCentralProvince ;
+                        rdfs:label "Polonnaruwa District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#RavanaFalls
+slt:RavanaFalls rdf:type owl:NamedIndividual ,
+                         slt:Waterfall ;
+                slt:hasAccessibility slt:EasyAccess ;
+                slt:locatedInCity slt:Ella ;
+                slt:offersActivity slt:PhotographyActivity ;
+                slt:annualVisitorsThousands 350 ;
+                slt:averageVisitDurationHours 1 ;
+                slt:elevationMetres 760 ;
+                slt:entranceFeeLKR 0 ;
+                slt:openOnPoyaDays "true"^^xsd:boolean ;
+                rdfs:comment "Twenty-five metre cascade on the Ella–Wellawaya road, associated with the Ramayana."@en ;
+                rdfs:label "Ravana Falls"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SafariActivity
+slt:SafariActivity rdf:type owl:NamedIndividual ,
+                            slt:WildlifeActivity ;
+                   rdfs:label "Jeep safari"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Sigiriya
+slt:Sigiriya rdf:type owl:NamedIndividual ,
+                      slt:City ;
+             slt:cityInDistrict slt:MataleDistrict ;
+             rdfs:label "Sigiriya"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SigiriyaRockFortress
+slt:SigiriyaRockFortress rdf:type owl:NamedIndividual ,
+                                  slt:ArchaeologicalSite ;
+                         slt:hasAccessibility slt:ModerateAccess ;
+                         slt:hasHeritageStatus slt:UNESCOWorldHeritage ;
+                         slt:locatedInCity slt:Sigiriya ;
+                         slt:nearbyAttraction slt:DambullaCaveTemple ;
+                         slt:offersActivity slt:HeritageWalkActivity ,
+                                            slt:HikingActivity ,
+                                            slt:PhotographyActivity ;
+                         slt:annualVisitorsThousands 780 ;
+                         slt:averageVisitDurationHours 3.5 ;
+                         slt:elevationMetres 349 ;
+                         slt:entranceFeeLKR 10000 ;
+                         slt:inscribedYear 1982 ;
+                         slt:openOnPoyaDays "true"^^xsd:boolean ;
+                         slt:hasProvenance "Central Cultural Fund site listing" ;
+                         rdfs:comment "Fifth-century royal citadel built on a granite monolith, with the mirror wall and frescoes."@en ;
+                         rdfs:label "Sigiriya Rock Fortress"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SouthernProvince
+slt:SouthernProvince rdf:type owl:NamedIndividual ,
+                              slt:Province ;
+                     slt:hasCapitalCity slt:Galle ;
+                     rdfs:label "Southern Province"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SriPadaSeason
+slt:SriPadaSeason rdf:type owl:NamedIndividual ,
+                           slt:Festival ;
+                  rdfs:comment "Pilgrimage season on Adam's Peak, from Unduvap to Vesak poya."@en ;
+                  rdfs:label "Sri Pada pilgrimage season"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SurfingActivity
+slt:SurfingActivity rdf:type owl:NamedIndividual ,
+                             slt:AdventureActivity ;
+                    rdfs:label "Surfing"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleOfTheTooth
+slt:TempleOfTheTooth rdf:type owl:NamedIndividual ,
+                              slt:BuddhistTemple ;
+                     slt:hasAccessibility slt:EasyAccess ;
+                     slt:hasHeritageStatus slt:UNESCOWorldHeritage ;
+                     slt:hostsFestival slt:EsalaPerahera ;
+                     slt:locatedInCity slt:Kandy ;
+                     slt:offersActivity slt:HeritageWalkActivity ,
+                                        slt:PhotographyActivity ,
+                                        slt:TempleVisitActivity ;
+                     slt:annualVisitorsThousands 650 ;
+                     slt:averageVisitDurationHours 1.5 ;
+                     slt:entranceFeeLKR 2000 ;
+                     slt:inscribedYear 1988 ;
+                     slt:openOnPoyaDays "true"^^xsd:boolean ;
+                     rdfs:comment "Royal palace complex housing the relic of the tooth of the Buddha."@en ;
+                     rdfs:label "Sri Dalada Maligawa (Temple of the Tooth)"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity
+slt:TempleVisitActivity rdf:type owl:NamedIndividual ,
+                                 slt:CulturalActivity ;
+                        rdfs:label "Temple visit"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ThavaruniSelvam
+slt:ThavaruniSelvam rdf:type owl:NamedIndividual ,
+                             slt:DomesticVisitor ;
+                    slt:visited slt:JaffnaFort ,
+                                slt:KoneswaramTemple ,
+                                slt:NallurKandaswamyKovil ;
+                    rdfs:label "Thavaruni Selvam"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TissaSafariHotel
+slt:TissaSafariHotel rdf:type owl:NamedIndividual ,
+                              slt:Hotel ;
+                     slt:servesAttraction slt:YalaNationalPark ;
+                     slt:hasStarRating 4 ;
+                     rdfs:label "Tissa Safari Hotel"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Tissamaharama
+slt:Tissamaharama rdf:type owl:NamedIndividual ,
+                           slt:City ;
+                  slt:cityInDistrict slt:HambantotaDistrict ;
+                  rdfs:label "Tissamaharama"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Trincomalee
+slt:Trincomalee rdf:type owl:NamedIndividual ,
+                         slt:CoastalCity ;
+                slt:cityInDistrict slt:TrincomaleeDistrict ;
+                rdfs:label "Trincomalee"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TrincomaleeDistrict
+slt:TrincomaleeDistrict rdf:type owl:NamedIndividual ,
+                                 slt:District ;
+                        slt:districtInProvince slt:EasternProvince ;
+                        rdfs:label "Trincomalee District"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritage
+slt:UNESCOWorldHeritage rdf:type owl:NamedIndividual ,
+                                 slt:HeritageStatus ;
+                        rdfs:comment "Inscribed on the UNESCO World Heritage List."@en ;
+                        rdfs:label "UNESCO World Heritage"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UvaProvince
+slt:UvaProvince rdf:type owl:NamedIndividual ,
+                         slt:Province ;
+                slt:hasCapitalCity slt:Badulla ;
+                rdfs:label "Uva Province"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WesternProvince
+slt:WesternProvince rdf:type owl:NamedIndividual ,
+                             slt:Province ;
+                    slt:hasCapitalCity slt:Colombo ;
+                    rdfs:label "Western Province"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WhaleWatchingActivity
+slt:WhaleWatchingActivity rdf:type owl:NamedIndividual ,
+                                   slt:WildlifeActivity ;
+                          rdfs:label "Whale watching"@en .
+
+
+###  http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#YalaNationalPark
+slt:YalaNationalPark rdf:type owl:NamedIndividual ,
+                              slt:NationalPark ;
+                     slt:hasAccessibility slt:ModerateAccess ;
+                     slt:locatedInCity slt:Tissamaharama ;
+                     slt:offersActivity slt:BirdwatchingActivity ,
+                                        slt:PhotographyActivity ,
+                                        slt:SafariActivity ;
+                     slt:annualVisitorsThousands 550 ;
+                     slt:averageVisitDurationHours 5 ;
+                     slt:entranceFeeLKR 4500 ;
+                     slt:openOnPoyaDays "true"^^xsd:boolean ;
+                     rdfs:comment "Largest visited national park, known for its leopard density."@en ;
+                     rdfs:label "Yala National Park"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+slt:DifficultAccess rdfs:comment "Requires a long or strenuous ascent."@en ;
+                    rdfs:label "Difficult access"@en .
+
+
+slt:EasyAccess rdfs:comment "Reachable by road, minimal walking."@en ;
+               rdfs:label "Easy access"@en .
+
+
+slt:ModerateAccess rdfs:comment "Requires a short climb, rough track or jeep transfer."@en ;
+                   rdfs:label "Moderate access"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( slt:AdventureActivity
+                slt:CulturalActivity
+                slt:WildlifeActivity
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( slt:ArchaeologicalSite
+                slt:ColonialFort
+                slt:HistoricLandmark
+                slt:ReligiousSite
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( slt:Beach
+                slt:Mountain
+                slt:NationalPark
+                slt:Waterfall
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( slt:BuddhistTemple
+                slt:Church
+                slt:HinduKovil
+                slt:Mosque
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( slt:City
+                slt:District
+                slt:Province
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( slt:DifficultAccess
+                slt:EasyAccess
+                slt:ModerateAccess
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( slt:EcoLodge
+                slt:Guesthouse
+                slt:Hotel
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( slt:AdamsPeak
+                        slt:AnuradhapuraSacredCity
+                        slt:DambullaCaveTemple
+                        slt:GalleFort
+                        slt:HortonPlains
+                        slt:JaffnaFort
+                        slt:KoneswaramTemple
+                        slt:MirissaBeach
+                        slt:NallurKandaswamyKovil
+                        slt:NineArchBridge
+                        slt:PolonnaruwaAncientCity
+                        slt:RavanaFalls
+                        slt:SigiriyaRockFortress
+                        slt:TempleOfTheTooth
+                        slt:YalaNationalPark
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( slt:BirdwatchingActivity
+                        slt:CyclingActivity
+                        slt:HeritageWalkActivity
+                        slt:HikingActivity
+                        slt:PhotographyActivity
+                        slt:SafariActivity
+                        slt:SurfingActivity
+                        slt:TempleVisitActivity
+                        slt:WhaleWatchingActivity
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( slt:CentralProvince
+                        slt:EasternProvince
+                        slt:NorthCentralProvince
+                        slt:NorthernProvince
+                        slt:SouthernProvince
+                        slt:UvaProvince
+                        slt:WesternProvince
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( slt:EsalaPerahera
+                        slt:NallurFestival
+                        slt:SriPadaSeason
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

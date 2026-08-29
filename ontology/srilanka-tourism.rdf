@@ -1,0 +1,1920 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#"
+     xml:base="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:slt="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dcterms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism">
+        <dcterms:creator xml:lang="en">MSc in Artificial Intelligence, University of Moratuwa</dcterms:creator>
+        <dcterms:description xml:lang="en">An OWL 2 DL ontology describing tourist attractions in Sri Lanka, the
+administrative locations that contain them, the activities they offer, the festivals they host and
+the accommodation that serves them. Built for the Semantic Web and Ontologies coursework
+assignment: it is designed so that a description-logic reasoner derives location, classification and
+relationship facts that are never asserted directly.</dcterms:description>
+        <dcterms:title xml:lang="en">Sri Lanka Tourism and Cultural Heritage Ontology</dcterms:title>
+        <rdfs:comment xml:lang="en">Namespace prefix slt:. All local names use UpperCamelCase for classes and individuals, lowerCamelCase for properties.</rdfs:comment>
+        <owl:versionInfo>1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasProvenance -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasProvenance">
+        <rdfs:comment xml:lang="en">Free-text note recording where a fact about an individual came from.</rdfs:comment>
+        <rdfs:label xml:lang="en">has provenance</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#cityInDistrict -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#cityInDistrict">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#withinArea"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <rdfs:comment xml:lang="en">A city lies in exactly one district.</rdfs:comment>
+        <rdfs:label xml:lang="en">city in district</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#districtInProvince -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#districtInProvince">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#withinArea"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province"/>
+        <rdfs:comment xml:lang="en">A district lies in exactly one province.</rdfs:comment>
+        <rdfs:label xml:lang="en">district in province</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasAccessibility -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasAccessibility">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AccessibilityLevel"/>
+        <rdfs:comment xml:lang="en">Links an attraction to exactly one value from the accessibility value partition.</rdfs:comment>
+        <rdfs:label xml:lang="en">has accessibility</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasAttraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasAttraction">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#locatedInCity"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:comment xml:lang="en">Inverse of locatedInCity. Never asserted; always inferred.</rdfs:comment>
+        <rdfs:label xml:lang="en">has attraction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasCapitalCity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasCapitalCity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <rdfs:comment xml:lang="en">A province has exactly one capital, and a city is the capital of at most one province.</rdfs:comment>
+        <rdfs:label xml:lang="en">has capital city</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasHeritageStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasHeritageStatus">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageStatus"/>
+        <rdfs:comment xml:lang="en">A formal heritage designation held by the attraction.</rdfs:comment>
+        <rdfs:label xml:lang="en">has heritage status</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasNearbyAccommodation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasNearbyAccommodation">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#servesAttraction"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Accommodation"/>
+        <rdfs:comment xml:lang="en">Inverse of servesAttraction. Never asserted; always inferred.</rdfs:comment>
+        <rdfs:label xml:lang="en">has nearby accommodation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hostsFestival -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hostsFestival">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Festival"/>
+        <rdfs:comment xml:lang="en">A festival held at this attraction.</rdfs:comment>
+        <rdfs:label xml:lang="en">hosts festival</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#locatedInCity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#locatedInCity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <rdfs:comment xml:lang="en">Relates an attraction to the city or town it sits in.</rdfs:comment>
+        <rdfs:label xml:lang="en">located in city</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#locatedInProvince -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#locatedInProvince">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#locatedInCity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#cityInDistrict"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#districtInProvince"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">Province of an attraction. Never asserted: derived by the property chain locatedInCity o cityInDistrict o districtInProvince.</rdfs:comment>
+        <rdfs:label xml:lang="en">located in province</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#nearbyAttraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#nearbyAttraction">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:comment xml:lang="en">Two attractions close enough to visit on the same day. Symmetric, so only one direction is asserted.</rdfs:comment>
+        <rdfs:label xml:lang="en">nearby attraction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#offersActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#offersActivity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Activity"/>
+        <rdfs:comment xml:lang="en">An activity a visitor can do at this attraction.</rdfs:comment>
+        <rdfs:label xml:lang="en">offers activity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#servesAttraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#servesAttraction">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:comment xml:lang="en">Accommodation within convenient reach of an attraction.</rdfs:comment>
+        <rdfs:label xml:lang="en">serves attraction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#visited -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#visited">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Visitor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:comment xml:lang="en">Records that a visitor has been to an attraction.</rdfs:comment>
+        <rdfs:label xml:lang="en">visited</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#withinArea -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#withinArea">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Location"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Location"/>
+        <rdfs:comment xml:lang="en">Transitive containment between locations. cityInDistrict and districtInProvince are sub-properties, so a city is inferred to be within its province.</rdfs:comment>
+        <rdfs:label xml:lang="en">within area</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#annualVisitorsThousands -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#annualVisitorsThousands">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">Approximate yearly visitor count, in thousands.</rdfs:comment>
+        <rdfs:label xml:lang="en">annual visitors (thousands)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#averageVisitDurationHours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#averageVisitDurationHours">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Typical time a visitor spends at the attraction.</rdfs:comment>
+        <rdfs:label xml:lang="en">average visit duration (hours)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#elevationMetres -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#elevationMetres">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Height above mean sea level.</rdfs:comment>
+        <rdfs:label xml:lang="en">elevation (metres)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#entranceFeeLKR -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#entranceFeeLKR">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment xml:lang="en">Foreign-visitor entrance fee in Sri Lankan rupees. Exactly one value per attraction.</rdfs:comment>
+        <rdfs:label xml:lang="en">entrance fee (LKR)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasStarRating -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasStarRating">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">Tourist-board star rating of an accommodation, 1 to 5.</rdfs:comment>
+        <rdfs:label xml:lang="en">has star rating</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#inscribedYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#inscribedYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">Year the site received its heritage designation.</rdfs:comment>
+        <rdfs:label xml:lang="en">inscribed year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#openOnPoyaDays -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#openOnPoyaDays">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Whether the site admits visitors on full-moon poya holidays.</rdfs:comment>
+        <rdfs:label xml:lang="en">open on poya days</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AccessibilityLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AccessibilityLevel">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DifficultAccess"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">How hard the attraction is to reach. Exhaustively partitioned into Easy, Moderate and Difficult.</rdfs:comment>
+        <rdfs:label xml:lang="en">Accessibility level</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Accommodation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Accommodation">
+        <rdfs:comment xml:lang="en">A place where visitors stay overnight.</rdfs:comment>
+        <rdfs:label xml:lang="en">Accommodation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Activity">
+        <rdfs:comment xml:lang="en">Something a visitor can do at an attraction.</rdfs:comment>
+        <rdfs:label xml:lang="en">Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AdventureActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AdventureActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Activity"/>
+        <rdfs:comment xml:lang="en">A physically demanding outdoor activity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Adventure activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ArchaeologicalSite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ArchaeologicalSite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalAttraction"/>
+        <rdfs:comment xml:lang="en">An excavated or conserved ancient settlement or monument.</rdfs:comment>
+        <rdfs:label xml:lang="en">Archaeological site</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalAttraction"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NaturalAttraction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Any site in Sri Lanka that a visitor may travel to see. Root of the attraction taxonomy.</rdfs:comment>
+        <rdfs:label xml:lang="en">Attraction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Beach -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Beach">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NaturalAttraction"/>
+        <rdfs:comment xml:lang="en">A coastal sand or rock shoreline visited for recreation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Beach</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BuddhistTemple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BuddhistTemple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ReligiousSite"/>
+        <rdfs:comment xml:lang="en">A vihara, dagaba or cave temple of the Buddhist tradition.</rdfs:comment>
+        <rdfs:label xml:lang="en">Buddhist temple</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BudgetAttraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BudgetAttraction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#entranceFeeLKR"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2500</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">DEFINED: an Attraction whose entrance fee is below LKR 2500. Uses an OWL 2 datatype restriction on a data property.</rdfs:comment>
+        <rdfs:label xml:lang="en">Budget attraction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CentralProvinceAttraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CentralProvinceAttraction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#locatedInProvince"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CentralProvince"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">DEFINED: an Attraction located in the Central Province. Membership depends entirely on the locatedInProvince property chain.</rdfs:comment>
+        <rdfs:label xml:lang="en">Central Province attraction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Church -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Church">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ReligiousSite"/>
+        <rdfs:comment xml:lang="en">A Christian place of worship.</rdfs:comment>
+        <rdfs:label xml:lang="en">Church</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Location"/>
+        <rdfs:comment xml:lang="en">A city or town within a district.</rdfs:comment>
+        <rdfs:label xml:lang="en">City</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CoastalAttraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CoastalAttraction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#locatedInCity"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CoastalCity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">DEFINED: an Attraction located in a coastal city.</rdfs:comment>
+        <rdfs:label xml:lang="en">Coastal attraction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CoastalCity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CoastalCity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <rdfs:comment xml:lang="en">A city that lies on the coastline. Used to derive coastal attractions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Coastal city</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ColonialFort -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ColonialFort">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalAttraction"/>
+        <rdfs:comment xml:lang="en">A Portuguese, Dutch or British military fortification.</rdfs:comment>
+        <rdfs:label xml:lang="en">Colonial fort</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Activity"/>
+        <rdfs:comment xml:lang="en">An activity centred on heritage, religion or local tradition.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cultural activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalAttraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalAttraction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NaturalAttraction"/>
+        <rdfs:comment xml:lang="en">An attraction whose primary value is human-made: religious, archaeological or colonial.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cultural attraction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DifficultAccess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DifficultAccess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AccessibilityLevel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Location"/>
+        <rdfs:comment xml:lang="en">An administrative district within a province.</rdfs:comment>
+        <rdfs:label xml:lang="en">District</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DomesticVisitor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DomesticVisitor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Visitor"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ForeignVisitor"/>
+        <rdfs:label xml:lang="en">Domestic visitor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AccessibilityLevel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EcoLodge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EcoLodge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Accommodation"/>
+        <rdfs:label xml:lang="en">Eco lodge</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Festival -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Festival">
+        <rdfs:comment xml:lang="en">A recurring cultural or religious event hosted at an attraction.</rdfs:comment>
+        <rdfs:label xml:lang="en">Festival</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ForeignVisitor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ForeignVisitor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Visitor"/>
+        <rdfs:label xml:lang="en">Foreign visitor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Guesthouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Guesthouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Accommodation"/>
+        <rdfs:label xml:lang="en">Guesthouse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageStatus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageStatus">
+        <rdfs:comment xml:lang="en">A formal heritage designation held by an attraction.</rdfs:comment>
+        <rdfs:label xml:lang="en">Heritage status</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HinduKovil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HinduKovil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ReligiousSite"/>
+        <rdfs:comment xml:lang="en">A Hindu temple, called a kovil in Sri Lankan usage.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hindu kovil</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HistoricLandmark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HistoricLandmark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalAttraction"/>
+        <rdfs:comment xml:lang="en">A notable engineering or civic structure of historic interest, such as a colonial-era bridge.</rdfs:comment>
+        <rdfs:label xml:lang="en">Historic landmark</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Hotel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Hotel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Accommodation"/>
+        <rdfs:label xml:lang="en">Hotel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Location">
+        <rdfs:comment xml:lang="en">An administrative or geographic place. Provinces contain districts, districts contain cities.</rdfs:comment>
+        <rdfs:label xml:lang="en">Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AccessibilityLevel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mosque -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mosque">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ReligiousSite"/>
+        <rdfs:comment xml:lang="en">An Islamic place of worship.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mosque</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mountain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mountain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NaturalAttraction"/>
+        <rdfs:comment xml:lang="en">A peak or highland summit reached on foot.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mountain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MultiActivityDestination -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MultiActivityDestination">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#offersActivity"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Activity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">DEFINED: an Attraction offering three or more distinct activities. Uses a qualified minimum cardinality restriction.</rdfs:comment>
+        <rdfs:label xml:lang="en">Multi-activity destination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalPark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalPark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NaturalAttraction"/>
+        <rdfs:comment xml:lang="en">A protected wildlife reserve managed by the Department of Wildlife Conservation.</rdfs:comment>
+        <rdfs:label xml:lang="en">National park</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NaturalAttraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NaturalAttraction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+        <rdfs:comment xml:lang="en">An attraction whose primary value is a landscape, ecosystem or geological feature.</rdfs:comment>
+        <rdfs:label xml:lang="en">Natural attraction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PilgrimageDestination -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PilgrimageDestination">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hostsFestival"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Festival"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">DEFINED: an Attraction that hosts at least one festival.</rdfs:comment>
+        <rdfs:label xml:lang="en">Pilgrimage destination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Location"/>
+        <rdfs:comment xml:lang="en">One of the nine provinces of Sri Lanka.</rdfs:comment>
+        <rdfs:label xml:lang="en">Province</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ReligiousSite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ReligiousSite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalAttraction"/>
+        <rdfs:comment xml:lang="en">A place of active worship that also receives visitors.</rdfs:comment>
+        <rdfs:label xml:lang="en">Religious site</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritageSite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritageSite">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#hasHeritageStatus"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritage"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">DEFINED: an Attraction whose heritage status is the UNESCO World Heritage designation.</rdfs:comment>
+        <rdfs:label xml:lang="en">UNESCO World Heritage site</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Visitor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Visitor">
+        <rdfs:comment xml:lang="en">A person who visits attractions.</rdfs:comment>
+        <rdfs:label xml:lang="en">Visitor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Waterfall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Waterfall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NaturalAttraction"/>
+        <rdfs:comment xml:lang="en">A named cascade visited as a scenic site.</rdfs:comment>
+        <rdfs:label xml:lang="en">Waterfall</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WildlifeActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WildlifeActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Activity"/>
+        <rdfs:comment xml:lang="en">An activity centred on observing wild animals.</rdfs:comment>
+        <rdfs:label xml:lang="en">Wildlife activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WildlifeDestination -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WildlifeDestination">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Attraction"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#offersActivity"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WildlifeActivity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">DEFINED: an Attraction that offers at least one wildlife activity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Wildlife destination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AdamsPeak -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AdamsPeak">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mountain"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DifficultAccess"/>
+        <hasHeritageStatus rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalHeritage"/>
+        <hostsFestival rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SriPadaSeason"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Hatton"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HikingActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7</averageVisitDurationHours>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2243</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Conical summit venerated by four religions, climbed overnight during pilgrimage season.</rdfs:comment>
+        <rdfs:label xml:lang="en">Adam&apos;s Peak (Sri Pada)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AmarasiriPerera -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AmarasiriPerera">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DomesticVisitor"/>
+        <visited rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AdamsPeak"/>
+        <visited rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DambullaCaveTemple"/>
+        <visited rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleOfTheTooth"/>
+        <rdfs:label xml:lang="en">Amarasiri Perera</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Anuradhapura -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Anuradhapura">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AnuradhapuraDistrict"/>
+        <rdfs:label xml:lang="en">Anuradhapura</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AnuradhapuraDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AnuradhapuraDistrict">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <districtInProvince rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NorthCentralProvince"/>
+        <rdfs:label xml:lang="en">Anuradhapura District</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AnuradhapuraSacredCity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AnuradhapuraSacredCity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ArchaeologicalSite"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess"/>
+        <hasHeritageStatus rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritage"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Anuradhapura"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CyclingActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">340</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7500</entranceFeeLKR>
+        <inscribedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1982</inscribedYear>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">First capital of Sri Lanka, containing the Sri Maha Bodhi and several great stupas.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sacred City of Anuradhapura</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Badulla -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Badulla">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BadullaDistrict"/>
+        <rdfs:label xml:lang="en">Badulla</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BadullaDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BadullaDistrict">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <districtInProvince rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UvaProvince"/>
+        <rdfs:label xml:lang="en">Badulla District</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BirdwatchingActivity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BirdwatchingActivity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WildlifeActivity"/>
+        <rdfs:label xml:lang="en">Birdwatching</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CentralProvince -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CentralProvince">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province"/>
+        <hasCapitalCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Kandy"/>
+        <rdfs:label xml:lang="en">Central Province</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Colombo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Colombo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CoastalCity"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ColomboDistrict"/>
+        <rdfs:label xml:lang="en">Colombo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ColomboDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ColomboDistrict">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <districtInProvince rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WesternProvince"/>
+        <rdfs:label xml:lang="en">Colombo District</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CyclingActivity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CyclingActivity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AdventureActivity"/>
+        <rdfs:label xml:lang="en">Cycling</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Dambulla -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Dambulla">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MataleDistrict"/>
+        <rdfs:label xml:lang="en">Dambulla</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DambullaCaveTemple -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DambullaCaveTemple">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BuddhistTemple"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess"/>
+        <hasHeritageStatus rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritage"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Dambulla"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">420</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</averageVisitDurationHours>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">340</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2000</entranceFeeLKR>
+        <inscribedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1991</inscribedYear>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Five cave shrines containing 153 Buddha statues and painted ceilings.</rdfs:comment>
+        <rdfs:label xml:lang="en">Dambulla Royal Cave Temple</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DifficultAccess -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DifficultAccess"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasternProvince -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasternProvince">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province"/>
+        <hasCapitalCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Trincomalee"/>
+        <rdfs:label xml:lang="en">Eastern Province</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Ella -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Ella">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BadullaDistrict"/>
+        <rdfs:label xml:lang="en">Ella</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EllaMountainEcoLodge -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EllaMountainEcoLodge">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EcoLodge"/>
+        <servesAttraction rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NineArchBridge"/>
+        <servesAttraction rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#RavanaFalls"/>
+        <hasStarRating rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasStarRating>
+        <rdfs:label xml:lang="en">Ella Mountain Eco Lodge</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EsalaPerahera -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EsalaPerahera">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Festival"/>
+        <rdfs:comment xml:lang="en">Annual procession of the Sacred Tooth Relic, held in Kandy.</rdfs:comment>
+        <rdfs:label xml:lang="en">Kandy Esala Perahera</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Galle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Galle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CoastalCity"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#GalleDistrict"/>
+        <rdfs:label xml:lang="en">Galle</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#GalleDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#GalleDistrict">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <districtInProvince rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SouthernProvince"/>
+        <rdfs:label xml:lang="en">Galle District</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#GalleFort -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#GalleFort">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ColonialFort"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess"/>
+        <hasHeritageStatus rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritage"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Galle"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CyclingActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">900</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <inscribedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1988</inscribedYear>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Fortified Dutch colonial town, still inhabited, on the southern coast.</rdfs:comment>
+        <rdfs:label xml:lang="en">Galle Fort</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HambantotaDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HambantotaDistrict">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <districtInProvince rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SouthernProvince"/>
+        <rdfs:label xml:lang="en">Hambantota District</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HannaSchmidt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HannaSchmidt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ForeignVisitor"/>
+        <visited rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#GalleFort"/>
+        <visited rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MirissaBeach"/>
+        <visited rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SigiriyaRockFortress"/>
+        <visited rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#YalaNationalPark"/>
+        <rdfs:label xml:lang="en">Hanna Schmidt</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Hatton -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Hatton">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NuwaraEliyaDistrict"/>
+        <rdfs:label xml:lang="en">Hatton</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalActivity"/>
+        <rdfs:label xml:lang="en">Guided heritage walk</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HikingActivity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HikingActivity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AdventureActivity"/>
+        <rdfs:label xml:lang="en">Hiking</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HortonPlains -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HortonPlains">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalPark"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NuwaraEliya"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BirdwatchingActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HikingActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">190</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</averageVisitDurationHours>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2100</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4000</entranceFeeLKR>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Montane grassland plateau containing World&apos;s End escarpment and Baker&apos;s Falls.</rdfs:comment>
+        <rdfs:label xml:lang="en">Horton Plains National Park</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Jaffna -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Jaffna">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CoastalCity"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaDistrict"/>
+        <rdfs:label xml:lang="en">Jaffna</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaDistrict">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <districtInProvince rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NorthernProvince"/>
+        <rdfs:label xml:lang="en">Jaffna District</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaFort -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaFort">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ColonialFort"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess"/>
+        <hasHeritageStatus rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalHeritage"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Jaffna"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CyclingActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.5</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Pentagonal Portuguese fort rebuilt by the Dutch, on the Jaffna lagoon.</rdfs:comment>
+        <rdfs:label xml:lang="en">Jaffna Fort</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaHeritageGuesthouse -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaHeritageGuesthouse">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Guesthouse"/>
+        <servesAttraction rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaFort"/>
+        <servesAttraction rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NallurKandaswamyKovil"/>
+        <hasStarRating rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasStarRating>
+        <rdfs:label xml:lang="en">Jaffna Heritage Guesthouse</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Kandy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Kandy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#KandyDistrict"/>
+        <rdfs:label xml:lang="en">Kandy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#KandyDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#KandyDistrict">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <districtInProvince rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CentralProvince"/>
+        <rdfs:label xml:lang="en">Kandy District</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#KandyLakeHotel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#KandyLakeHotel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Hotel"/>
+        <servesAttraction rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleOfTheTooth"/>
+        <hasStarRating rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasStarRating>
+        <rdfs:label xml:lang="en">Kandy Lake Hotel</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#KoneswaramTemple -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#KoneswaramTemple">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HinduKovil"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess"/>
+        <hasHeritageStatus rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalHeritage"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Trincomalee"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</averageVisitDurationHours>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">130</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Cliff-top Hindu temple on Swami Rock above Trincomalee harbour.</rdfs:comment>
+        <rdfs:label xml:lang="en">Koneswaram Temple</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MataleDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MataleDistrict">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <districtInProvince rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CentralProvince"/>
+        <rdfs:label xml:lang="en">Matale District</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MataraDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MataraDistrict">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <districtInProvince rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SouthernProvince"/>
+        <rdfs:label xml:lang="en">Matara District</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mirissa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mirissa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CoastalCity"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MataraDistrict"/>
+        <rdfs:label xml:lang="en">Mirissa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MirissaBeach -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MirissaBeach">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Beach"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mirissa"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SurfingActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WhaleWatchingActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">480</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Crescent bay on the south coast, the main departure point for blue whale watching.</rdfs:comment>
+        <rdfs:label xml:lang="en">Mirissa Beach</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NallurFestival -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NallurFestival">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Festival"/>
+        <rdfs:comment xml:lang="en">Twenty-five day Hindu festival held in Jaffna.</rdfs:comment>
+        <rdfs:label xml:lang="en">Nallur Festival</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NallurKandaswamyKovil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NallurKandaswamyKovil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HinduKovil"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess"/>
+        <hasHeritageStatus rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalHeritage"/>
+        <hostsFestival rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NallurFestival"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Jaffna"/>
+        <nearbyAttraction rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaFort"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Principal Hindu temple of Jaffna, dedicated to Lord Murugan.</rdfs:comment>
+        <rdfs:label xml:lang="en">Nallur Kandaswamy Kovil</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalHeritage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalHeritage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageStatus"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritage"/>
+        <rdfs:comment xml:lang="en">Protected monument under the Sri Lankan Antiquities Ordinance.</rdfs:comment>
+        <rdfs:label xml:lang="en">National Heritage</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NineArchBridge -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NineArchBridge">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HistoricLandmark"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess"/>
+        <hasHeritageStatus rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalHeritage"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Ella"/>
+        <nearbyAttraction rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#RavanaFalls"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HikingActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.5</averageVisitDurationHours>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">930</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Colonial-era stone viaduct on the Badulla railway line, built without steel.</rdfs:comment>
+        <rdfs:label xml:lang="en">Nine Arch Bridge</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NorthCentralProvince -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NorthCentralProvince">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province"/>
+        <hasCapitalCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Anuradhapura"/>
+        <rdfs:label xml:lang="en">North Central Province</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NorthernProvince -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NorthernProvince">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province"/>
+        <hasCapitalCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Jaffna"/>
+        <rdfs:label xml:lang="en">Northern Province</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NuwaraEliya -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NuwaraEliya">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NuwaraEliyaDistrict"/>
+        <rdfs:label xml:lang="en">Nuwara Eliya</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NuwaraEliyaDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NuwaraEliyaDistrict">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <districtInProvince rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CentralProvince"/>
+        <rdfs:label xml:lang="en">Nuwara Eliya District</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalActivity"/>
+        <rdfs:label xml:lang="en">Photography</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Polonnaruwa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Polonnaruwa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PolonnaruwaDistrict"/>
+        <rdfs:label xml:lang="en">Polonnaruwa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PolonnaruwaAncientCity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PolonnaruwaAncientCity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ArchaeologicalSite"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess"/>
+        <hasHeritageStatus rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritage"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Polonnaruwa"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CyclingActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">280</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7500</entranceFeeLKR>
+        <inscribedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1982</inscribedYear>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Second capital, containing the Gal Vihara rock sculptures and the Parakrama Samudra.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ancient City of Polonnaruwa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PolonnaruwaDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PolonnaruwaDistrict">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <districtInProvince rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NorthCentralProvince"/>
+        <rdfs:label xml:lang="en">Polonnaruwa District</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#RavanaFalls -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#RavanaFalls">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Waterfall"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Ella"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">350</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</averageVisitDurationHours>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">760</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Twenty-five metre cascade on the Ella–Wellawaya road, associated with the Ramayana.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ravana Falls</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SafariActivity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SafariActivity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WildlifeActivity"/>
+        <rdfs:label xml:lang="en">Jeep safari</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Sigiriya -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Sigiriya">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MataleDistrict"/>
+        <rdfs:label xml:lang="en">Sigiriya</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SigiriyaRockFortress -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SigiriyaRockFortress">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ArchaeologicalSite"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess"/>
+        <hasHeritageStatus rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritage"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Sigiriya"/>
+        <nearbyAttraction rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DambullaCaveTemple"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HikingActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">780</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.5</averageVisitDurationHours>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">349</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10000</entranceFeeLKR>
+        <inscribedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1982</inscribedYear>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <hasProvenance>Central Cultural Fund site listing</hasProvenance>
+        <rdfs:comment xml:lang="en">Fifth-century royal citadel built on a granite monolith, with the mirror wall and frescoes.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sigiriya Rock Fortress</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SouthernProvince -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SouthernProvince">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province"/>
+        <hasCapitalCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Galle"/>
+        <rdfs:label xml:lang="en">Southern Province</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SriPadaSeason -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SriPadaSeason">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Festival"/>
+        <rdfs:comment xml:lang="en">Pilgrimage season on Adam&apos;s Peak, from Unduvap to Vesak poya.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sri Pada pilgrimage season</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SurfingActivity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SurfingActivity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AdventureActivity"/>
+        <rdfs:label xml:lang="en">Surfing</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleOfTheTooth -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleOfTheTooth">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BuddhistTemple"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess"/>
+        <hasHeritageStatus rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritage"/>
+        <hostsFestival rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EsalaPerahera"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Kandy"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">650</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.5</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2000</entranceFeeLKR>
+        <inscribedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1988</inscribedYear>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Royal palace complex housing the relic of the tooth of the Buddha.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sri Dalada Maligawa (Temple of the Tooth)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalActivity"/>
+        <rdfs:label xml:lang="en">Temple visit</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ThavaruniSelvam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ThavaruniSelvam">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DomesticVisitor"/>
+        <visited rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaFort"/>
+        <visited rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#KoneswaramTemple"/>
+        <visited rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NallurKandaswamyKovil"/>
+        <rdfs:label xml:lang="en">Thavaruni Selvam</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TissaSafariHotel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TissaSafariHotel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Hotel"/>
+        <servesAttraction rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#YalaNationalPark"/>
+        <hasStarRating rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasStarRating>
+        <rdfs:label xml:lang="en">Tissa Safari Hotel</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Tissamaharama -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Tissamaharama">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HambantotaDistrict"/>
+        <rdfs:label xml:lang="en">Tissamaharama</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Trincomalee -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Trincomalee">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CoastalCity"/>
+        <cityInDistrict rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TrincomaleeDistrict"/>
+        <rdfs:label xml:lang="en">Trincomalee</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TrincomaleeDistrict -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TrincomaleeDistrict">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+        <districtInProvince rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasternProvince"/>
+        <rdfs:label xml:lang="en">Trincomalee District</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UNESCOWorldHeritage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageStatus"/>
+        <rdfs:comment xml:lang="en">Inscribed on the UNESCO World Heritage List.</rdfs:comment>
+        <rdfs:label xml:lang="en">UNESCO World Heritage</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UvaProvince -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UvaProvince">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province"/>
+        <hasCapitalCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Badulla"/>
+        <rdfs:label xml:lang="en">Uva Province</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WesternProvince -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WesternProvince">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province"/>
+        <hasCapitalCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Colombo"/>
+        <rdfs:label xml:lang="en">Western Province</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WhaleWatchingActivity -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WhaleWatchingActivity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WildlifeActivity"/>
+        <rdfs:label xml:lang="en">Whale watching</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#YalaNationalPark -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#YalaNationalPark">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalPark"/>
+        <hasAccessibility rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess"/>
+        <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Tissamaharama"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BirdwatchingActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+        <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SafariActivity"/>
+        <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">550</annualVisitorsThousands>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4500</entranceFeeLKR>
+        <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
+        <rdfs:comment xml:lang="en">Largest visited national park, known for its leopard density.</rdfs:comment>
+        <rdfs:label xml:lang="en">Yala National Park</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DifficultAccess">
+        <rdfs:comment xml:lang="en">Requires a long or strenuous ascent.</rdfs:comment>
+        <rdfs:label xml:lang="en">Difficult access</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess">
+        <rdfs:comment xml:lang="en">Reachable by road, minimal walking.</rdfs:comment>
+        <rdfs:label xml:lang="en">Easy access</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess">
+        <rdfs:comment xml:lang="en">Requires a short climb, rough track or jeep transfer.</rdfs:comment>
+        <rdfs:label xml:lang="en">Moderate access</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AdventureActivity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CulturalActivity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WildlifeActivity"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ArchaeologicalSite"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ColonialFort"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HistoricLandmark"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ReligiousSite"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Beach"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mountain"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NationalPark"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Waterfall"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BuddhistTemple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Church"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HinduKovil"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Mosque"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#City"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#District"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Province"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DifficultAccess"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasyAccess"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#ModerateAccess"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EcoLodge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Guesthouse"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Hotel"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AdamsPeak"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#AnuradhapuraSacredCity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#DambullaCaveTemple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#GalleFort"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HortonPlains"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaFort"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#KoneswaramTemple"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#MirissaBeach"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NallurKandaswamyKovil"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NineArchBridge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PolonnaruwaAncientCity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#RavanaFalls"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SigiriyaRockFortress"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleOfTheTooth"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#YalaNationalPark"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#BirdwatchingActivity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CyclingActivity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HikingActivity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SafariActivity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SurfingActivity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WhaleWatchingActivity"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#CentralProvince"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EasternProvince"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NorthCentralProvince"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NorthernProvince"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SouthernProvince"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#UvaProvince"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WesternProvince"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#EsalaPerahera"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#NallurFestival"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SriPadaSeason"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
