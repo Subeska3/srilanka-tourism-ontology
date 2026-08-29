@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Lanka Tourism Ontology — reasoning workbench</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="bloom" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="wordmark">
+    <div>
+      <span class="wordmark-name">Sri Lanka Heritage Graph</span>
+      <span class="wordmark-sub">OWL 2 DL · HermiT · SPARQL</span>
+    </div>
+  </div>
+  <div class="status" id="status-pills">
+    <span class="pill pill-loading">Starting the reasoner…</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Semantic Web &amp; Ontologies · Coursework</p>
+      <h1>The knowledge you<br>never wrote down.</h1>
+      <p class="hero-lede">
+        Fifteen Sri Lankan attractions, nine provinces and a description-logic reasoner.
+        Everything glowing blue below was derived, not typed in.
+      </p>
+      <div class="metrics" id="metrics">
+        <div class="metric"><span class="metric-value" data-key="classes">–</span><span class="metric-label">Classes</span></div>
+        <div class="metric"><span class="metric-value" data-key="props">–</span><span class="metric-label">Properties</span></div>
+        <div class="metric metric-derived"><span class="metric-value" data-key="derived">–</span><span class="metric-label">Derived facts</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Tabs ─────────────────────────────────────────────────────────── -->
+  <nav class="tabs" role="tablist">
+    <button class="tab is-active" role="tab" data-panel="panel-query">Ask</button>
+    <button class="tab" role="tab" data-panel="panel-explore">Explore</button>
+    <button class="tab" role="tab" data-panel="panel-add">Add an attraction</button>
+  </nav>
+
+  <!-- ── Panel: query ─────────────────────────────────────────────────── -->
+  <section class="panel is-active" id="panel-query">
+    <div class="workbench">
+
+      <aside class="rail">
+        <h2 class="rail-title">Competency questions</h2>
+        <p class="rail-note">Ten questions the ontology was built to answer.</p>
+        <ol class="cq-list" id="cq-list"></ol>
+      </aside>
+
+      <div class="stage">
+        <div class="stage-head">
+          <div>
+            <h2 class="stage-title" id="cq-title">Pick a question</h2>
+            <p class="stage-sub" id="cq-feature">Or write your own SPARQL below.</p>
+          </div>
+          <div class="knowledge-switch" role="group" aria-label="Knowledge source">
+            <button class="ks-option" data-mode="asserted">Asserted only</button>
+            <button class="ks-option is-on" data-mode="inferred">With reasoning</button>
+          </div>
+        </div>
+
+        <textarea id="sparql" spellcheck="false" aria-label="SPARQL query"></textarea>
+
+        <div class="stage-actions">
+          <button class="btn btn-primary" id="run">Run query</button>
+          <span class="result-note" id="result-note"></span>
+        </div>
+
+        <div class="results" id="results">
+          <p class="empty">Choose a competency question on the left, then run it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Panel: explore ───────────────────────────────────────────────── -->
+  <section class="panel" id="panel-explore">
+    <div class="explorer">
+      <div class="explorer-search">
+        <input type="search" id="search" placeholder="Search for Sigiriya, Jaffna, Yala…" aria-label="Search the ontology">
+        <div class="hits" id="hits"></div>
+      </div>
+      <div class="entity" id="entity">
+        <p class="empty">Search for any individual to see what was stated about it and what the reasoner added.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Panel: add ───────────────────────────────────────────────────── -->
+  <section class="panel" id="panel-add">
+    <div class="adder">
+      <div class="adder-form">
+        <h2 class="stage-title">Add an attraction</h2>
+        <p class="stage-sub">Describe a site. The reasoner runs again and tells you which classes it fell into.</p>
+
+        <div class="field">
+          <label for="f-label">Name</label>
+          <input id="f-label" type="text" placeholder="Pigeon Island Marine Park">
+          <p class="field-error" data-for="label"></p>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-type">Kind of attraction</label>
+            <select id="f-type"></select>
+            <p class="field-error" data-for="type"></p>
+          </div>
+          <div class="field">
+            <label for="f-city">City</label>
+            <select id="f-city"></select>
+            <p class="field-error" data-for="city"></p>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-access">Accessibility</label>
+            <select id="f-access"></select>
+            <p class="field-error" data-for="accessibility"></p>
+          </div>
+          <div class="field">
+            <label for="f-fee">Entrance fee (LKR)</label>
+            <input id="f-fee" type="number" min="0" step="100" value="0">
+            <p class="field-error" data-for="fee"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-heritage">Heritage status <span class="optional">optional</span></label>
+          <select id="f-heritage"></select>
+        </div>
+
+        <div class="field">
+          <label>Activities on offer</label>
+          <div class="chips" id="f-activities"></div>
+          <p class="field-error" data-for="activities"></p>
+        </div>
+
+        <p class="field-error field-error-form" data-for="_form"></p>
+
+        <div class="stage-actions">
+          <button class="btn btn-primary" id="add">Add and classify</button>
+          <button class="btn btn-ghost" id="reset">Reset additions</button>
+        </div>
+      </div>
+
+      <div class="verdict" id="verdict">
+        <p class="empty">Nothing added yet. Fill in the form to watch the reasoner place a brand-new site into the hierarchy.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>Sri Lanka Tourism &amp; Cultural Heritage Ontology · <code>slt:</code></span>
+  <span id="engine-note"></span>
+</footer>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
