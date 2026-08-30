@@ -6,10 +6,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism> .
+@base <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#> .
 
 <http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism> rdf:type owl:Ontology ;
-                                                                  dcterms:created "2026-08-29"^^xsd:date ;
                                                                   dcterms:creator "MSc in Artificial Intelligence, University of Moratuwa"@en ;
                                                                   dcterms:description """An OWL 2 DL ontology describing tourist attractions in Sri Lanka, the
 administrative locations that contain them, the activities they offer, the festivals they host and

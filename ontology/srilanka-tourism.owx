@@ -6,6 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism">
+    <Prefix name="" IRI="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="slt" IRI="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#"/>
@@ -13,10 +14,6 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2026-08-29</Literal>
-    </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
         <Literal xml:lang="en">MSc in Artificial Intelligence, University of Moratuwa</Literal>
@@ -240,10 +237,229 @@ relationship facts that are never asserted directly.</Literal>
         <DataProperty IRI="#openOnPoyaDays"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty IRI="#hasProvenance"/>
+        <NamedIndividual IRI="#AdamsPeak"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AmarasiriPerera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Anuradhapura"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AnuradhapuraDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Badulla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BadullaDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BirdwatchingActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CentralProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Colombo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ColomboDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CyclingActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dambulla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DambullaCaveTemple"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DifficultAccess"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EasternProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EasyAccess"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ella"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EllaMountainEcoLodge"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EsalaPerahera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Galle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalleDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GalleFort"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HambantotaDistrict"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#HannaSchmidt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hatton"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HeritageWalkActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HikingActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HortonPlains"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jaffna"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JaffnaDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JaffnaFort"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JaffnaHeritageGuesthouse"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kandy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KandyDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KandyLakeHotel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KoneswaramTemple"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MataleDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MataraDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mirissa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MirissaBeach"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ModerateAccess"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NallurFestival"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NationalHeritage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NineArchBridge"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NorthCentralProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NorthernProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NuwaraEliya"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NuwaraEliyaDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PhotographyActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Polonnaruwa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PolonnaruwaDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RavanaFalls"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SafariActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sigiriya"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SigiriyaRockFortress"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SouthernProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SriPadaSeason"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SurfingActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TempleOfTheTooth"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TempleVisitActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ThavaruniSelvam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TissaSafariHotel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tissamaharama"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Trincomalee"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TrincomaleeDistrict"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UNESCOWorldHeritage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UvaProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WesternProvince"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WhaleWatchingActivity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#YalaNationalPark"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="dcterms:description"/>
@@ -252,229 +468,10 @@ relationship facts that are never asserted directly.</Literal>
         <AnnotationProperty abbreviatedIRI="dcterms:title"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#DifficultAccess"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#SigiriyaRockFortress"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#DambullaCaveTemple"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#NallurKandaswamyKovil"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#JaffnaDistrict"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#EllaMountainEcoLodge"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#EasyAccess"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#BadullaDistrict"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#PhotographyActivity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#SafariActivity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#HambantotaDistrict"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#WesternProvince"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#MirissaBeach"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#HikingActivity"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#TissaSafariHotel"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#WhaleWatchingActivity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ColomboDistrict"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#MataraDistrict"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#EsalaPerahera"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#NuwaraEliyaDistrict"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#NallurFestival"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Dambulla"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#KandyLakeHotel"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Tissamaharama"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#TempleOfTheTooth"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#BirdwatchingActivity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#JaffnaFort"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#TrincomaleeDistrict"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Jaffna"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#KandyDistrict"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#HeritageWalkActivity"/>
+        <AnnotationProperty IRI="#hasProvenance"/>
     </Declaration>
     <Declaration>
         <Datatype abbreviatedIRI="xsd:date"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#AnuradhapuraDistrict"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Ella"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Mirissa"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#CyclingActivity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ThavaruniSelvam"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#SriPadaSeason"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#HortonPlains"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Anuradhapura"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#NineArchBridge"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#CentralProvince"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#NorthernProvince"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#RavanaFalls"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Colombo"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Polonnaruwa"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#JaffnaHeritageGuesthouse"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#NorthCentralProvince"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Badulla"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#UvaProvince"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#SurfingActivity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Galle"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#PolonnaruwaDistrict"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#EasternProvince"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#AdamsPeak"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#YalaNationalPark"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Hatton"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Trincomalee"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#KoneswaramTemple"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#AmarasiriPerera"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#NationalHeritage"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#SouthernProvince"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#TempleVisitActivity"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Kandy"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#MataleDistrict"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#ModerateAccess"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#NuwaraEliya"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#GalleFort"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#UNESCOWorldHeritage"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#GalleDistrict"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Sigiriya"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#BudgetAttraction"/>
@@ -485,7 +482,7 @@ relationship facts that are never asserted directly.</Literal>
                 <DatatypeRestriction>
                     <Datatype abbreviatedIRI="xsd:decimal"/>
                     <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxExclusive">
-                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2500</Literal>
+                        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2500</Literal>
                     </FacetRestriction>
                 </DatatypeRestriction>
             </DataSomeValuesFrom>
@@ -1737,17 +1734,17 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#averageVisitDurationHours"/>
         <NamedIndividual IRI="#AdamsPeak"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">7</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">7</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#elevationMetres"/>
         <NamedIndividual IRI="#AdamsPeak"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2243</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2243</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#AdamsPeak"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#openOnPoyaDays"/>
@@ -1762,12 +1759,12 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#averageVisitDurationHours"/>
         <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">5</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">5</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#AnuradhapuraSacredCity"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">7500</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">7500</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#inscribedYear"/>
@@ -1787,17 +1784,17 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#averageVisitDurationHours"/>
         <NamedIndividual IRI="#DambullaCaveTemple"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#elevationMetres"/>
         <NamedIndividual IRI="#DambullaCaveTemple"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">340</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">340</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#DambullaCaveTemple"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2000</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2000</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#inscribedYear"/>
@@ -1822,12 +1819,12 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#averageVisitDurationHours"/>
         <NamedIndividual IRI="#GalleFort"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">3</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">3</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#GalleFort"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#inscribedYear"/>
@@ -1847,17 +1844,17 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#averageVisitDurationHours"/>
         <NamedIndividual IRI="#HortonPlains"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#elevationMetres"/>
         <NamedIndividual IRI="#HortonPlains"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2100</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2100</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#HortonPlains"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4000</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4000</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#openOnPoyaDays"/>
@@ -1877,7 +1874,7 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#JaffnaFort"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#openOnPoyaDays"/>
@@ -1902,17 +1899,17 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#averageVisitDurationHours"/>
         <NamedIndividual IRI="#KoneswaramTemple"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#elevationMetres"/>
         <NamedIndividual IRI="#KoneswaramTemple"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">130</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">130</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#KoneswaramTemple"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#openOnPoyaDays"/>
@@ -1927,12 +1924,12 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#averageVisitDurationHours"/>
         <NamedIndividual IRI="#MirissaBeach"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#MirissaBeach"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#openOnPoyaDays"/>
@@ -1947,12 +1944,12 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#averageVisitDurationHours"/>
         <NamedIndividual IRI="#NallurKandaswamyKovil"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#NallurKandaswamyKovil"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#openOnPoyaDays"/>
@@ -1972,12 +1969,12 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#elevationMetres"/>
         <NamedIndividual IRI="#NineArchBridge"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">930</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">930</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#NineArchBridge"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#openOnPoyaDays"/>
@@ -1992,12 +1989,12 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#averageVisitDurationHours"/>
         <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#PolonnaruwaAncientCity"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">7500</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">7500</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#inscribedYear"/>
@@ -2017,17 +2014,17 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#averageVisitDurationHours"/>
         <NamedIndividual IRI="#RavanaFalls"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#elevationMetres"/>
         <NamedIndividual IRI="#RavanaFalls"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">760</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">760</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#RavanaFalls"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">0</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#openOnPoyaDays"/>
@@ -2047,12 +2044,12 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#elevationMetres"/>
         <NamedIndividual IRI="#SigiriyaRockFortress"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">349</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">349</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#SigiriyaRockFortress"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">10000</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10000</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#inscribedYear"/>
@@ -2077,7 +2074,7 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#TempleOfTheTooth"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">2000</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2000</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#inscribedYear"/>
@@ -2102,12 +2099,12 @@ relationship facts that are never asserted directly.</Literal>
     <DataPropertyAssertion>
         <DataProperty IRI="#averageVisitDurationHours"/>
         <NamedIndividual IRI="#YalaNationalPark"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">5</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">5</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#entranceFeeLKR"/>
         <NamedIndividual IRI="#YalaNationalPark"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4500</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4500</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#openOnPoyaDays"/>

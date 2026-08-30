@@ -33,6 +33,12 @@ relationship facts that are never asserted directly.</dcterms:description>
     
 
 
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
     <!-- http://purl.org/dc/terms/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
@@ -57,6 +63,23 @@ relationship facts that are never asserted directly.</dcterms:description>
         <rdfs:comment xml:lang="en">Free-text note recording where a fact about an individual came from.</rdfs:comment>
         <rdfs:label xml:lang="en">has provenance</rdfs:label>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 
@@ -462,7 +485,7 @@ relationship facts that are never asserted directly.</dcterms:description>
                                 <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
                                 <owl:withRestrictions rdf:parseType="Collection">
                                     <rdf:Description>
-                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2500</xsd:maxExclusive>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2500</xsd:maxExclusive>
                                     </rdf:Description>
                                 </owl:withRestrictions>
                             </rdfs:Datatype>
@@ -898,9 +921,9 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</annualVisitorsThousands>
-        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7</averageVisitDurationHours>
-        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2243</elevationMetres>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</averageVisitDurationHours>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2243</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</entranceFeeLKR>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Conical summit venerated by four religions, climbed overnight during pilgrimage season.</rdfs:comment>
         <rdfs:label xml:lang="en">Adam&apos;s Peak (Sri Pada)</rdfs:label>
@@ -951,8 +974,8 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity"/>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">340</annualVisitorsThousands>
-        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</averageVisitDurationHours>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7500</entranceFeeLKR>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7500</entranceFeeLKR>
         <inscribedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1982</inscribedYear>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">First capital of Sri Lanka, containing the Sri Maha Bodhi and several great stupas.</rdfs:comment>
@@ -1049,9 +1072,9 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity"/>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">420</annualVisitorsThousands>
-        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</averageVisitDurationHours>
-        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">340</elevationMetres>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2000</entranceFeeLKR>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</averageVisitDurationHours>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">340</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</entranceFeeLKR>
         <inscribedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1991</inscribedYear>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Five cave shrines containing 153 Buddha statues and painted ceilings.</rdfs:comment>
@@ -1145,8 +1168,8 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity"/>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">900</annualVisitorsThousands>
-        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</averageVisitDurationHours>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</entranceFeeLKR>
         <inscribedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1988</inscribedYear>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Fortified Dutch colonial town, still inhabited, on the southern coast.</rdfs:comment>
@@ -1216,9 +1239,9 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HikingActivity"/>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">190</annualVisitorsThousands>
-        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</averageVisitDurationHours>
-        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2100</elevationMetres>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4000</entranceFeeLKR>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</averageVisitDurationHours>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2100</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4000</entranceFeeLKR>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Montane grassland plateau containing World&apos;s End escarpment and Baker&apos;s Falls.</rdfs:comment>
         <rdfs:label xml:lang="en">Horton Plains National Park</rdfs:label>
@@ -1258,7 +1281,7 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</annualVisitorsThousands>
         <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.5</averageVisitDurationHours>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</entranceFeeLKR>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Pentagonal Portuguese fort rebuilt by the Dutch, on the Jaffna lagoon.</rdfs:comment>
         <rdfs:label xml:lang="en">Jaffna Fort</rdfs:label>
@@ -1319,9 +1342,9 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</annualVisitorsThousands>
-        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</averageVisitDurationHours>
-        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">130</elevationMetres>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</averageVisitDurationHours>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">130</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</entranceFeeLKR>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Cliff-top Hindu temple on Swami Rock above Trincomalee harbour.</rdfs:comment>
         <rdfs:label xml:lang="en">Koneswaram Temple</rdfs:label>
@@ -1369,8 +1392,8 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SurfingActivity"/>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#WhaleWatchingActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">480</annualVisitorsThousands>
-        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</averageVisitDurationHours>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</entranceFeeLKR>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Crescent bay on the south coast, the main departure point for blue whale watching.</rdfs:comment>
         <rdfs:label xml:lang="en">Mirissa Beach</rdfs:label>
@@ -1405,8 +1428,8 @@ relationship facts that are never asserted directly.</dcterms:description>
         <nearbyAttraction rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#JaffnaFort"/>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</annualVisitorsThousands>
-        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</averageVisitDurationHours>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</entranceFeeLKR>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Principal Hindu temple of Jaffna, dedicated to Lord Murugan.</rdfs:comment>
         <rdfs:label xml:lang="en">Nallur Kandaswamy Kovil</rdfs:label>
@@ -1437,8 +1460,8 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</annualVisitorsThousands>
         <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.5</averageVisitDurationHours>
-        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">930</elevationMetres>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">930</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</entranceFeeLKR>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Colonial-era stone viaduct on the Badulla railway line, built without steel.</rdfs:comment>
         <rdfs:label xml:lang="en">Nine Arch Bridge</rdfs:label>
@@ -1516,8 +1539,8 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#HeritageWalkActivity"/>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">280</annualVisitorsThousands>
-        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</averageVisitDurationHours>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7500</entranceFeeLKR>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7500</entranceFeeLKR>
         <inscribedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1982</inscribedYear>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Second capital, containing the Gal Vihara rock sculptures and the Parakrama Samudra.</rdfs:comment>
@@ -1544,9 +1567,9 @@ relationship facts that are never asserted directly.</dcterms:description>
         <locatedInCity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#Ella"/>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">350</annualVisitorsThousands>
-        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</averageVisitDurationHours>
-        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">760</elevationMetres>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</entranceFeeLKR>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</averageVisitDurationHours>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">760</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</entranceFeeLKR>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Twenty-five metre cascade on the Ella–Wellawaya road, associated with the Ramayana.</rdfs:comment>
         <rdfs:label xml:lang="en">Ravana Falls</rdfs:label>
@@ -1586,8 +1609,8 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">780</annualVisitorsThousands>
         <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.5</averageVisitDurationHours>
-        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">349</elevationMetres>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10000</entranceFeeLKR>
+        <elevationMetres rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">349</elevationMetres>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</entranceFeeLKR>
         <inscribedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1982</inscribedYear>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <hasProvenance>Central Cultural Fund site listing</hasProvenance>
@@ -1639,7 +1662,7 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#TempleVisitActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">650</annualVisitorsThousands>
         <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.5</averageVisitDurationHours>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2000</entranceFeeLKR>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</entranceFeeLKR>
         <inscribedYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1988</inscribedYear>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Royal palace complex housing the relic of the tooth of the Buddha.</rdfs:comment>
@@ -1759,8 +1782,8 @@ relationship facts that are never asserted directly.</dcterms:description>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#PhotographyActivity"/>
         <offersActivity rdf:resource="http://www.semanticweb.org/lk/ontologies/2026/srilanka-tourism#SafariActivity"/>
         <annualVisitorsThousands rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">550</annualVisitorsThousands>
-        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</averageVisitDurationHours>
-        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4500</entranceFeeLKR>
+        <averageVisitDurationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</averageVisitDurationHours>
+        <entranceFeeLKR rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4500</entranceFeeLKR>
         <openOnPoyaDays rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</openOnPoyaDays>
         <rdfs:comment xml:lang="en">Largest visited national park, known for its leopard density.</rdfs:comment>
         <rdfs:label xml:lang="en">Yala National Park</rdfs:label>
